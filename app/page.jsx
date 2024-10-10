@@ -20,12 +20,12 @@ const Home = () => {
       <div className="container mx-auto h-full">
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
           {/* text */}
-          <div className="text-center xl:text-left order-2 xl:order-none">
+          <div className="text-center xl:text-left order-2 xl:order-none xl:w-1/2">
             <span className="text-lg">Data Entusiast & Web Developer</span>
             <h1 className="h1_alt">
               Hello Im
               <br />
-              <span className="text-accent">Ahmad Fiqri</span>
+              <span className="h1_secondary text-accent">Ahmad Fiqri</span>
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">
               Passionate data enthusiast and web developer, proficient in
@@ -52,7 +52,7 @@ const Home = () => {
           </div>
 
           {/* photo */}
-          <div className="order-1 xl:order-none mb-8 xl:mb-0">
+          <div className="order-1 xl:order-none mb-8 xl:mb-0 w-full xl:w-1/2">
             <Photo />
           </div>
         </div>

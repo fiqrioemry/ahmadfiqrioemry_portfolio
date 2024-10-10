@@ -5,13 +5,14 @@ import Image from "next/image";
 
 const Photo = () => {
   return (
-    <div className="w-full h-full relative">
+    <div className="w-full h-full relative flex justify-center items-center">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,
           transition: { delay: 2, duration: 0.4, ease: "easeIn" },
         }}
+        className="relative"
       >
         {/* image animation */}
         <motion.div
@@ -20,29 +21,30 @@ const Photo = () => {
             opacity: 1,
             transition: { delay: 2.4, duration: 0.4, ease: "easeInOut" },
           }}
+          className="mx-auto"
         >
-          <div className="w-[285px] h-[285px] xl:w-[485px] xl:h-[485px]  mix-blend-darken absolute">
+          <div className="w-[200px]  h-[200px] md:h-[260px] md:w-[260px] xl:h-[400px] xl:w-[400px] mx-auto absolute">
             <Image
               src="/assets/photo.png"
               priority
               quality={100}
               fill
               alt="profile_picture"
-              className="object-contain"
+              className="object-cover"
             />
           </div>
         </motion.div>
 
         {/* circle animation */}
         <motion.svg
-          className="w-[300px] xl:w-[500px] h-[300px] xl:h-[500px]"
+          className="w-[210px] h-[210px]  md:w-[250px] md:h-[250px] xl:w-[410px]  xl:h-[410px] mx-auto"
           fill="transparent"
-          ViewBox="0 0 506 506"
+          viewBox="0 0 506 506"
           xmlns="http://www.w3.org/2000/svg"
         >
           <motion.circle
-            cx="248"
-            cy="248"
+            cx="250"
+            cy="250"
             r="250"
             stroke="#00ff99"
             strokeWidth="4"
