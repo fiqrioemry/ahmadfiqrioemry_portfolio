@@ -31,7 +31,7 @@ const info = [
   {
     icon: <FaMapMarkerAlt />,
     title: "Address",
-    description: "Kelapa Raya No. 11 Medan ",
+    description: "Kelapa Raya No. 11 Medan, Sumatera Utara",
   },
 ];
 

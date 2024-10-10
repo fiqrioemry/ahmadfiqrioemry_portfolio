@@ -8,28 +8,28 @@ const services = [
     num: "01",
     title: "Web Development",
     descriptions:
-      " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam",
+      " Creating dynamic, responsive, and user-centered websites using modern frameworks like React and Next.js. I able to scalable solutions with clean code, ensuring optimal performance, and seamless user experiences across devices ",
     href: "",
   },
   {
     num: "02",
-    title: "Web Development",
+    title: "Data Analysist",
     descriptions:
-      " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam",
+      "Data Visualization and business analysist using jupyter notebook and tableau to gain insight and support desicion-making",
     href: "",
   },
   {
     num: "03",
-    title: "Web Development",
+    title: "Data Science",
     descriptions:
-      " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam",
+      "Leveraging machine learning and deep learning to extract insights and drive innovation. From predictive modeling to natural language processing (NLP), I able develop data-driven solutions to solve complex problems, utilizing tools like Python and Scikit-learn.",
     href: "",
   },
   {
     num: "04",
-    title: "Web Development",
+    title: "UI/UX Design",
     descriptions:
-      " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam",
+      "Creating visually appealing and user-friendly interfaces that enhance user experience. Expertise in wireframing, prototyping, and user testing, using tools like Figma, Sketch, and Adobe XD to deliver intuitive designs that align with user needs and business goals.",
     href: "",
   },
 ];
@@ -59,7 +59,7 @@ const Services = () => {
                 className="flex-1 flex flex-col justify-center gap-6 group"
               >
                 {/* top */}
-                <div className="w-full flex justify-between items-center">
+                <div className="w-full h-full flex justify-between items-center">
                   <div className="text-5xl font-extrabold text-outline text-transparent group-hover:text-outline-hover transition-all duration-500">
                     {service.num}
                   </div>

@@ -1,9 +1,20 @@
+"use client";
 import Photo from "@/components/Photo";
 import Social from "@/components/Social";
 import Stats from "@/components/Stats";
 import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi";
+
 const Home = () => {
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/assets/ahmad_fiqri_oemry_cv.pdf"; // Make sure cv.pdf is placed in the 'public' folder
+    link.download = "ahmad_fiqri_cv.pdf"; // Name the file to be downloaded
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section className="h-full">
       <div className="container mx-auto h-full">
@@ -17,15 +28,16 @@ const Home = () => {
               <span className="text-accent">Ahmad Fiqri</span>
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-              pariatur qui nulla atque neque adipisci alias debitis. Quidem iste
-              adipisci harum.
+              Passionate data enthusiast and web developer, proficient in
+              various programming languages and technologies, delivering
+              impactful solutions through code and analysist.
             </p>
             <div className="flex flex-col xl:flex-row items-center gap-8">
               <Button
                 variant="outline"
                 size="lg"
                 className="uppercase flex  items-center gap-2"
+                onClick={handleDownload}
               >
                 <span>Download CV</span>
                 <FiDownload className="text-xl" />
@@ -45,7 +57,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <Stats />
+      {/* <Stats /> */}
     </section>
   );
 };

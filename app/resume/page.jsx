@@ -19,27 +19,23 @@ import {
   SiJavascript,
 } from "react-icons/si";
 
-const resume = [{}];
-
-const about = [
-  {
-    title: "About me",
-    description:
-      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis elescu masio flasta",
-    info: [
-      { fieldName: "Name", fieldValue: "Ahmad Fiqri " },
-      { fieldName: "Nationality", fieldValue: "Indonesia" },
-      { fieldName: "Phone", fieldValue: "0821-6094-5033 " },
-      { fieldName: "Email", fieldValue: "foemry@gmail.com" },
-      {
-        fieldName: "LinkedIn",
-        fieldValue: "www.linkedin.com/in/ahmadfiqrioemry/",
-      },
-      { fieldName: "Freelance", fieldValue: "Available " },
-      { fieldName: "Languages", fieldValue: "Bahasa, English " },
-    ],
-  },
-];
+const about = {
+  title: "About me",
+  description:
+    " Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis elescu masio flasta",
+  info: [
+    { fieldName: "Name", fieldValue: "Ahmad Fiqri " },
+    { fieldName: "Nationality", fieldValue: "Indonesia" },
+    { fieldName: "Phone", fieldValue: "0821-6094-5033 " },
+    { fieldName: "Email", fieldValue: "foemry@gmail.com" },
+    {
+      fieldName: "LinkedIn",
+      fieldValue: "www.linkedin.com/in/ahmadfiqrioemry/",
+    },
+    { fieldName: "Freelance", fieldValue: "Available " },
+    { fieldName: "Languages", fieldValue: "Bahasa, English " },
+  ],
+};
 
 const experience = {
   icon: "/assets/resume/badge.svg",
@@ -307,7 +303,7 @@ const Resume = () => {
             </TabsContent>
 
             {/* about */}
-            {/* <TabsContent
+            <TabsContent
               value="about"
               className="w-full text-center xl:text-left"
             >
@@ -318,8 +314,9 @@ const Resume = () => {
                 </p>
 
                 <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px]">
-                  {about.info.map((item, index) => {
-                    return (
+                  {/* Add a check to ensure `about.info` is defined and not empty */}
+                  {about.info && about.info.length > 0 ? (
+                    about.info.map((item, index) => (
                       <li
                         key={index}
                         className="flex items-center justify-center xl:justify-start gap-4"
@@ -327,11 +324,13 @@ const Resume = () => {
                         <span className="text-white/60">{item.fieldName}</span>
                         <span className="text-xl">{item.fieldValue}</span>
                       </li>
-                    );
-                  })}
+                    ))
+                  ) : (
+                    <li className="text-white/60">No information available</li> // Optional fallback if info is empty
+                  )}
                 </ul>
               </div>
-            </TabsContent> */}
+            </TabsContent>
           </div>
         </Tabs>
       </div>
