@@ -307,7 +307,7 @@ const Resume = () => {
             </TabsContent>
 
             {/* about */}
-            <TabsContent
+            {/* <TabsContent
               value="about"
               className="w-full text-center xl:text-left"
             >
@@ -331,7 +331,7 @@ const Resume = () => {
                   })}
                 </ul>
               </div>
-            </TabsContent>
+            </TabsContent> */}
           </div>
         </Tabs>
       </div>
