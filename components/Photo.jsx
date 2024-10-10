@@ -18,7 +18,7 @@ const Photo = () => {
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
-            transition: { delay: 2.4, duration: 0.4, ease: "easeInOut   " },
+            transition: { delay: 2.4, duration: 0.4, ease: "easeInOut" },
           }}
         >
           <div className="w-[285px] h-[285px] xl:w-[485px] xl:h-[485px]  mix-blend-darken absolute">
