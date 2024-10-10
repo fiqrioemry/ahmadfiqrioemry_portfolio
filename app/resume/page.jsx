@@ -46,7 +46,7 @@ const experience = {
     {
       company: "Purwadhika Digital School",
       place: "Batam, Indonesia",
-      position: "Apprentice Data Science Program",
+      position: "Apprentice Data Science and Machine Learning Program",
       duration: "March 2024 - October 2024",
     },
     {
