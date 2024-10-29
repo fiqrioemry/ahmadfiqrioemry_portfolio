@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Socials from "@/components/Socials";
 import { FiDownload } from "react-icons/fi";
 import { Button } from "@/components/ui/button";
@@ -15,7 +16,17 @@ const Home = () => {
     document.body.removeChild(link);
   };
   return (
-    <section>
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{
+        opacity: 1,
+        transition: {
+          delay: 1.5,
+          duration: 0.3,
+          ease: "easeIn",
+        },
+      }}
+    >
       <div className="container mx-auto  flex items-center h-full">
         <div className="flex flex-wrap w-full">
           <div className="w-full md:w-1/2 order-2 md:order-none h-full mb-8 py-6 md:py-10 space-y-2">
@@ -50,13 +61,13 @@ const Home = () => {
 
           {/* photo area */}
           <div className="w-full md:w-1/2 py-0 md:py-8 ">
-            <div className="flex items-center justify-center h-[200px] md:h-[450px] w-full">
+            <div className="flex items-center justify-center h-[200px] md:h-[450px] w-full relative">
               <PhotoProfile />
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

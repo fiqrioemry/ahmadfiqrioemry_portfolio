@@ -134,8 +134,8 @@ const Project = () => {
       animate={{
         opacity: 1,
         transition: {
-          delay: 2.4,
-          duration: 0.4,
+          delay: 1.5,
+          duration: 0.3,
           ease: "easeIn",
         },
       }}
@@ -347,6 +347,8 @@ const Project = () => {
                   })}
               </div>
             </TabsContent>
+
+            {/* 4. machine learning */}
             <TabsContent value="machine_learning" className="w-full ">
               <div className="flex flex-wrap w-full ">
                 {projects
@@ -376,14 +378,18 @@ const Project = () => {
                                 <span className=" px-2 py-1 bg-green-500 text-[12px] rounded-lg">
                                   Nodejs
                                 </span>
-                                <span className=" px-2 py-1 bg-secondary text-[12px] rounded-lg">
+                                <span className=" px-2 py-1 bg-primary text-[12px] rounded-lg">
                                   Nodejs
                                 </span>
                               </div>
                               <div className="flex justify-end">
-                                <div className="flex flex-row gap-x-2 ">
-                                  <FaLink />
-                                  <FaGithub />
+                                <div className="flex flex-row gap-x-4 text-lg">
+                                  <Link href={item.link}>
+                                    <FaLink />
+                                  </Link>
+                                  <Link href={item.github}>
+                                    <FaGithub />
+                                  </Link>
                                 </div>
                               </div>
                             </div>
@@ -395,6 +401,7 @@ const Project = () => {
               </div>
             </TabsContent>
 
+            {/* 5. ui and ux design */}
             <TabsContent value="ui_ux" className="w-full ">
               <div className="flex flex-wrap w-full ">
                 {projects
@@ -426,9 +433,13 @@ const Project = () => {
                                 </span>
                               </div>
                               <div className="flex justify-end">
-                                <div className="flex flex-row gap-x-2 ">
-                                  <FaLink />
-                                  <FaGithub />
+                                <div className="flex flex-row gap-x-4 text-lg">
+                                  <Link href={item.link}>
+                                    <FaLink />
+                                  </Link>
+                                  <Link href={item.github}>
+                                    <FaGithub />
+                                  </Link>
                                 </div>
                               </div>
                             </div>

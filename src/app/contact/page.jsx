@@ -41,8 +41,8 @@ const Contact = () => {
       animate={{
         opacity: 1,
         transition: {
-          delay: 2.4,
-          duration: 0.4,
+          delay: 1.5,
+          duration: 0.3,
           ease: "easeIn",
         },
       }}

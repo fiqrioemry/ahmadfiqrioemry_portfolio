@@ -245,8 +245,8 @@ const About = () => {
       animate={{
         opacity: 1,
         transition: {
-          delay: 2.4,
-          duration: 0.4,
+          delay: 1.5,
+          duration: 0.3,
           ease: "easeIn",
         },
       }}
@@ -350,21 +350,34 @@ const About = () => {
                 <p className="w-full text-white/60 mx-auto xl:mx-0 text-justify">
                   {experience.description}
                 </p>
-                <ScrollArea className="h-[300px]">
+
+                <ScrollArea className="h-[280px]">
                   <ul className="grid grid-cols gap-[15px] ">
                     {experience.items.map((item, index) => {
                       return (
                         <li
                           key={index}
-                          className="bg-primary h-[150px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                          className="bg-primary py-4 px-10 rounded-xl flex flex-col  lg:items-start"
                         >
-                          <span className="text-accent">{item.duration}</span>
-                          <h3 className="text-xl  min-h-[40px] text-center lg:text-left">
+                          <div className="flex justify-between items-center ">
+                            <div className="text-accent text-md">
+                              {item.duration}
+                            </div>
+                            <div className="text-sm">{item.place}</div>
+                          </div>
+
+                          <h3 className="text-lg min-h-[40px]">
                             {item.company}
                           </h3>
-                          <div className="flex items-center gap-3">
-                            <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                            <p className="text-white/60">{item.position}</p>
+
+                          <div className="space-y-2">
+                            <div className="flex items-center gap-x-4">
+                              {" "}
+                              <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
+                              <p className="text-sm text-white/60 ">
+                                {item.position}
+                              </p>
+                            </div>
                           </div>
                         </li>
                       );
@@ -383,7 +396,7 @@ const About = () => {
                 <p className="w-full text-white/60 mx-auto xl:mx-0 text-justify">
                   {course_and_training.description}
                 </p>
-                <ScrollArea className="h-[325px]">
+                <ScrollArea className="h-[280px]">
                   <ul className="grid grid-cols gap-[15px] ">
                     {course_and_training.items.map((item, index) => {
                       return (

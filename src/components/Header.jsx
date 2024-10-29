@@ -18,9 +18,9 @@ const Header = () => {
 
   return (
     <header
-      className={`sticky top-0 backdrop-blur-md t ransition-all duration-300 ${
-        scrolled ? " shadow-md" : ""
-      } py-8`}
+      className={`${
+        scrolled ? "shadow-md" : ""
+      } py-8 sticky top-0 backdrop-blur-md t ransition-all duration-300 z-30 `}
     >
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
