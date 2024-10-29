@@ -17,7 +17,7 @@ const Contact = () => {
       className="min-h-[80vh]"
     >
       <div className="container mx-auto">
-        <div className="text-accent text-2xl">CONTACT</div>
+        <div className="text-accent text-2xl">NEW CONTACT</div>
       </div>
     </motion.section>
   );

@@ -17,7 +17,7 @@ const Blog = () => {
       className="min-h-[80vh]"
     >
       <div className="container mx-auto">
-        <div className="text-accent text-2xl">BLOG</div>
+        <div className="text-accent text-2xl">ADD SECTION BLOG</div>
       </div>
     </motion.section>
   );
