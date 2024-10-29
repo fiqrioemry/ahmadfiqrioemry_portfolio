@@ -1,11 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   prefix: "",
   theme: {
     container: {
@@ -15,7 +11,7 @@ module.exports = {
     screens: {
       sm: "648px",
       md: "768px",
-      lg: "960px",
+      lg: "	px",
       xl: "1200px",
     },
     fontFamily: {
@@ -24,6 +20,7 @@ module.exports = {
     extend: {
       colors: {
         primary: "#1c1c22",
+        secondary: "#27272c",
         accent: {
           DEFAULT: "#00ff99",
           hover: "#00e187",
