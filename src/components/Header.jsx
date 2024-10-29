@@ -1,8 +1,8 @@
 "use client";
-
-import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import NavMenu from "./NavMenu";
+import MobileNav from "./MobileNav";
+import React, { useState, useEffect } from "react";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -31,7 +31,14 @@ const Header = () => {
           </Link>
 
           {/* navmenu */}
-          <NavMenu />
+          <div className="hidden xl:flex items-center gap-8">
+            <NavMenu />
+          </div>
+
+          {/* mobile nav */}
+          <div className="xl:hidden">
+            <MobileNav />
+          </div>
         </div>
       </div>
     </header>
