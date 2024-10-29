@@ -284,12 +284,12 @@ const About = () => {
                   <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 w-full py-8 md:py-0 ">
                     {about.info.map((item, index) => (
                       <li key={index} className="flex  gap-x-4">
-                        <div className="text-white/60 text-start md:text-auto w-1/2 md:w-[35%]">
+                        <p className="text-white/60 text-start md:text-auto w-1/2 md:w-[35%]">
                           {item.fieldName}
-                        </div>
-                        <div className="text-start w-1/2 md:w-[65%]">
+                        </p>
+                        <p className="text-start w-1/2 md:w-[65%]">
                           : {item.fieldValue}
-                        </div>
+                        </p>
                       </li>
                     ))}
                   </ul>
