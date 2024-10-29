@@ -320,7 +320,6 @@ const About = () => {
                           </h3>
                           <div className="space-y-2">
                             <div className="flex items-center gap-x-4">
-                              {" "}
                               <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
                               <p className="text-sm text-white/60 ">
                                 {item.degree}
@@ -436,7 +435,7 @@ const About = () => {
                               </div>
                             </TooltipTrigger>
                             <TooltipContent>
-                              <p className="capitalize">{skill.name}</p>
+                              <div className="capitalize">{skill.name}</div>
                             </TooltipContent>
                           </Tooltip>
                         </TooltipProvider>
