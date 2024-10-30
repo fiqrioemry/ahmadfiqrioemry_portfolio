@@ -3,32 +3,35 @@ import Link from "next/link";
 import NavMenu from "./NavMenu";
 import MobileNav from "./MobileNav";
 import { FaMoon, FaSun } from "react-icons/fa";
-import { toggleDarkMode } from "@/app/store/store";
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import {
+  handleDarkMode,
+  handleScroll,
+} from "@/lib/features/action/interfaceAction";
 
 const Header = () => {
   const dispatch = useDispatch();
-  const [scrolled, setScrolled] = useState(false);
-  const darkMode = useSelector((state) => state.darkMode);
+  const { darkMode, scrollActive } = useSelector((state) => state.interface);
 
   const handleToggle = () => {
-    dispatch(toggleDarkMode());
+    dispatch(handleDarkMode());
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 0);
-    };
+    const handleScrollEvent = () => dispatch(handleScroll(window.scrollY > 0));
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    window.addEventListener("scroll", handleScrollEvent);
+
+    handleScrollEvent();
+
+    return () => window.removeEventListener("scroll", handleScrollEvent);
+  }, [dispatch]);
 
   return (
     <header
       className={`${
-        scrolled ? "shadow-md" : ""
+        scrollActive ? "shadow-md" : ""
       } py-8 sticky top-0 backdrop-blur-md transition-all duration-300 z-30 `}
     >
       <div className="container mx-auto">

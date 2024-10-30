@@ -2,7 +2,7 @@
 
 import "../app/globals.css";
 import Header from "@/components/Header";
-import StoreProvider from "./store/StoreProvider";
+import StoreProvider from "./StoreProvider";
 import { JetBrains_Mono } from "next/font/google";
 import PageTransition from "@/components/PageTransition";
 import StairTransition from "@/components/StairTransition";
@@ -15,7 +15,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 function RootComponent({ children }) {
-  const darkMode = useSelector((state) => state.darkMode);
+  const darkMode = useSelector((state) => state.interface.darkMode);
 
   return (
     <>

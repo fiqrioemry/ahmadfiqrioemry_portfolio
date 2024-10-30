@@ -16,8 +16,15 @@ const Blog = () => {
       }}
       className="min-h-[80vh]"
     >
-      <div className="container mx-auto">
-        <div className="text-accent text-2xl">ADD SECTION BLOG</div>
+      <div className="container mx-auto py-12">
+        <div className="text-center">
+          <h1 className="text-4xl tracking-[1px]">
+            What I Recently <span className="text-accent">Wrote</span> ?
+          </h1>
+          <div className="h-[300px] flex items-center justify-center text-4xl">
+            FEATURES COMING SOON ...
+          </div>
+        </div>
       </div>
     </motion.section>
   );

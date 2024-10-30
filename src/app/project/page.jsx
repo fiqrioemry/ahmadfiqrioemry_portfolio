@@ -426,11 +426,15 @@ const Project = () => {
                               <div>{item.name}</div>
                               <div className="flex-row space-x-2">
                                 <span className=" px-2 py-1 bg-white text-black text-[12px] rounded-lg">
-                                  Javascript
+                                  {item.tech[0]}
                                 </span>
-                                <span className=" px-2 py-1 bg-green-500 text-[12px] rounded-lg">
-                                  Nodejs
-                                </span>
+                                {item.tech[1] ? (
+                                  <span className=" px-2 py-1 bg-green-500 text-[12px] rounded-lg">
+                                    {item.tech[1]}
+                                  </span>
+                                ) : (
+                                  ""
+                                )}
                               </div>
                               <div className="flex justify-end">
                                 <div className="flex flex-row gap-x-4 text-lg">

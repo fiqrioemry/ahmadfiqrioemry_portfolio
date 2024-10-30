@@ -1,0 +1,4 @@
+export const HANDLE_DARK_MODE = "HANDLE_DARK_MODE";
+export const HANDLE_TOGGLE = "HANDLE_TOGGLE";
+export const HANDLE_NAVBAR = "HANDLE_NAVBAR";
+export const HANDLE_SCROLL = "HANDLE_SCROLL";
