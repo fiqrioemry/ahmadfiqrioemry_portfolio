@@ -20,12 +20,12 @@ const Header = () => {
     <header
       className={`${
         scrolled ? "shadow-md" : ""
-      } py-8 sticky top-0 backdrop-blur-md t ransition-all duration-300 z-30 `}
+      } py-8 sticky top-0 backdrop-blur-md transition-all duration-300 z-30 `}
     >
       <div className="container mx-auto">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between ">
           <Link href="/">
-            <h1 className="text-2xl tracking-[1px]">
+            <h1 className="text-2xl tracking-[1px] dark:text-light">
               Ahmad<span className="text-accent">Fiqri</span>
             </h1>
           </Link>

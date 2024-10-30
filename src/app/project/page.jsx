@@ -183,7 +183,7 @@ const Project = () => {
                   return (
                     <div className="w-1/2 sm:w-1/3 md:w-1/4 " key={index}>
                       <div className="px-2 py-2">
-                        <div className="w-full bg-secondary rounded-md h-[300px]">
+                        <div className="w-full bg-secondary dark:bg-lightSecondary dark:shadow-md rounded-md h-[300px]">
                           {/* image area */}
                           <div className="w-full h-[200px] overflow-hidden px-2 py-2">
                             <Image
@@ -241,7 +241,7 @@ const Project = () => {
                     return (
                       <div className="w-1/2 sm:w-1/3 md:w-1/4 " key={index}>
                         <div className="px-2 py-2">
-                          <div className="w-full bg-secondary rounded-md h-[300px]">
+                          <div className="w-full bg-secondary dark:bg-lightSecondary  dark:shadow-md rounded-md h-[300px]">
                             {/* image area */}
                             <div className="w-full h-[200px] overflow-hidden px-2 py-2">
                               <Image
@@ -299,7 +299,7 @@ const Project = () => {
                     return (
                       <div className="w-1/2 sm:w-1/3 md:w-1/4 " key={index}>
                         <div className="px-2 py-2">
-                          <div className="w-full bg-secondary rounded-md h-[300px]">
+                          <div className="w-full bg-secondary dark:bg-lightSecondary  dark:shadow-md rounded-md h-[300px]">
                             {/* image area */}
                             <div className="w-full h-[200px] overflow-hidden px-2 py-2">
                               <Image
@@ -357,7 +357,7 @@ const Project = () => {
                     return (
                       <div className="w-1/2 sm:w-1/3 md:w-1/4 " key={index}>
                         <div className="px-2 py-2">
-                          <div className="w-full bg-secondary rounded-md h-[300px]">
+                          <div className="w-full bg-secondary dark:bg-lightSecondary dark:shadow-md  rounded-md h-[300px]">
                             {/* image area */}
                             <div className="w-full h-[200px] overflow-hidden px-2 py-2">
                               <Image
@@ -410,7 +410,7 @@ const Project = () => {
                     return (
                       <div className="w-1/2 sm:w-1/3 md:w-1/4 " key={index}>
                         <div className="px-2 py-2">
-                          <div className="w-full bg-secondary rounded-md h-[300px]">
+                          <div className="w-full bg-secondary dark:bg-lightSecondary dark:shadow-md rounded-md h-[300px]">
                             {/* image area */}
                             <div className="w-full h-[200px] overflow-hidden px-2 py-2">
                               <Image

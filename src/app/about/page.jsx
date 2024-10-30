@@ -34,7 +34,7 @@ import {
 const about = {
   title: "About me",
   description:
-    "A Mechanical Engineering graduate with 5 years experience in inspection and quality management. I have transitioned into the data science and web development, through comprehensive coursework and hands-on projects. Enthusiastic about applying my knowledge to real-world challenges. I am committed to continuous learning and professional development in digital technologies. im good on teamwork, critical thinking and detail oriented.",
+    "A Mechanical Engineering graduate with 5 years experience in inspection and quality management. I have transitioned into the data science and web development, through comprehensive coursework and hands-on projects. Im good on teamwork, critical thinking and detail oriented, committed to continuous learning and develop in tech field. ",
   info: [
     { fieldName: "Name", fieldValue: "Ahmad Fiqri " },
     { fieldName: "Nationality", fieldValue: "Indonesia" },
@@ -253,10 +253,7 @@ const About = () => {
       className="min-h-[80vh]"
     >
       <div className="container mx-auto ">
-        <Tabs
-          className="flex flex-wrap h-full pt-8 md:pt-14"
-          defaultValue="about"
-        >
+        <Tabs className="flex flex-wrap h-full pt-6" defaultValue="about">
           <TabsList className="flex flex-row md:flex-col gap-x-2 gap-y-2 md:w-[40%] mb-8 pr-0 md:pr-12 w-full">
             <div className="w-1/2 md:w-full space-y-2">
               <TabsTrigger value="about">About</TabsTrigger>
@@ -277,14 +274,14 @@ const About = () => {
             <TabsContent value="about" className="w-full ">
               <div className="flex flex-col gap-[20px] text-center xl:text-left ">
                 <h3 className="text-4xl font-bold">{about.title}</h3>
-                <p className="w-full text-white/60 mx-auto xl:mx-0 text-justify">
+                <p className="w-full text-dark dark:text-light mx-auto xl:mx-0 text-justify">
                   {about.description}
                 </p>
                 <div>
-                  <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 w-full py-8 md:py-0 ">
+                  <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-[10px] w-full py-6 md:py-0 ">
                     {about.info.map((item, index) => (
-                      <li key={index} className="flex  gap-x-4">
-                        <p className="text-white/60 text-start md:text-auto w-1/2 md:w-[35%]">
+                      <li key={index} className="flex  gap-x-2">
+                        <p className="text-dark dark:text-light text-start md:text-auto w-1/2 md:w-[35%]">
                           {item.fieldName}
                         </p>
                         <p className="text-start w-1/2 md:w-[65%]">
@@ -301,7 +298,7 @@ const About = () => {
             <TabsContent value="education" className="w-full ">
               <div className="flex flex-col gap-[20px] text-center xl:text-left ">
                 <h3 className="text-4xl font-bold">{education.title}</h3>
-                <p className="w-full text-white/60 mx-auto xl:mx-0 text-justify">
+                <p className="w-full text-dark dark:text-light mx-auto xl:mx-0 text-justify">
                   {education.description}
                 </p>
                 <ScrollArea className="h-auto">
@@ -310,7 +307,7 @@ const About = () => {
                       return (
                         <li
                           key={index}
-                          className="bg-primary py-4 px-10 rounded-xl flex flex-col  lg:items-start"
+                          className="bg-primary dark:bg-lightPrimary py-4 px-10 rounded-xl flex flex-col  lg:items-start"
                         >
                           <span className="text-accent text-md">
                             {item.duration}
@@ -321,14 +318,14 @@ const About = () => {
                           <div className="space-y-2">
                             <div className="flex items-center gap-x-4">
                               <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                              <p className="text-sm text-white/60 ">
+                              <p className="text-sm text-dark dark:text-light">
                                 {item.degree}
                               </p>
                             </div>
 
                             <div className="flex items-center gap-x-4">
                               <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                              <p className="text-sm text-white/60">
+                              <p className="text-sm text-dark dark:text-light">
                                 {item.gpa_score
                                   ? `GPA Score: ${item.gpa_score}`
                                   : `Final Score: ${item.final_score}`}
@@ -347,7 +344,7 @@ const About = () => {
             <TabsContent value="experience" className="w-full ">
               <div className="flex flex-col gap-[20px] text-center xl:text-left ">
                 <h3 className="text-4xl font-bold">{experience.title}</h3>
-                <p className="w-full text-white/60 mx-auto xl:mx-0 text-justify">
+                <p className="w-full text-dark dark:text-light mx-auto xl:mx-0 text-justify">
                   {experience.description}
                 </p>
 
@@ -357,7 +354,7 @@ const About = () => {
                       return (
                         <li
                           key={index}
-                          className="bg-primary py-4 px-10 rounded-xl flex flex-col  lg:items-start"
+                          className="bg-primary dark:bg-lightPrimary py-4 px-10 rounded-xl flex flex-col  lg:items-start"
                         >
                           <div className="flex justify-between items-center ">
                             <div className="text-accent text-md">
@@ -374,7 +371,7 @@ const About = () => {
                             <div className="flex items-center gap-x-4">
                               {" "}
                               <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                              <p className="text-sm text-white/60 ">
+                              <p className="text-sm text-dark dark:text-light">
                                 {item.position}
                               </p>
                             </div>
@@ -393,7 +390,7 @@ const About = () => {
                 <h3 className="text-4xl font-bold">
                   {course_and_training.title}
                 </h3>
-                <p className="w-full text-white/60 mx-auto xl:mx-0 text-justify">
+                <p className="w-full text-dark dark:text-light mx-auto xl:mx-0 text-justify">
                   {course_and_training.description}
                 </p>
                 <ScrollArea className="h-[280px]">
@@ -402,7 +399,7 @@ const About = () => {
                       return (
                         <li
                           key={index}
-                          className="bg-primary py-4 px-10 rounded-xl flex flex-col  lg:items-start"
+                          className="bg-primary dark:bg-lightPrimary py-4 px-10 rounded-xl flex flex-col  lg:items-start"
                         >
                           <span className="text-accent text-md">
                             {item.duration}
@@ -414,7 +411,7 @@ const About = () => {
                             <div className="flex items-center gap-x-4">
                               {" "}
                               <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                              <p className="text-sm text-white/60 ">
+                              <p className="text-sm text-dark dark:text-light">
                                 {item.degree}
                               </p>
                             </div>
@@ -429,20 +426,20 @@ const About = () => {
 
             {/* skills */}
             <TabsContent value="skills" className="">
-              <div className="flex flex-col gap-[30px]">
-                <div className="flex flex-col gap-[30px] text-center xl:text-left">
+              <div className="flex flex-col gap-[15px]">
+                <div className="flex flex-col gap-[15px] text-center xl:text-left">
                   <h3 className="text-4xl font-bold">{skills.title}</h3>
-                  <p className="w-full text-justify text-white/60 mx-auto xl:mx-0">
+                  <p className="w-full text-justify text-dark dark:text-light mx-auto xl:mx-0">
                     {skills.description}
                   </p>
                 </div>
-                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4  xl:gap-[30px]">
+                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4  xl:gap-[15px]">
                   {skills.skillList.map((skill, index) => {
                     return (
                       <li key={index}>
                         <TooltipProvider delayDuration={100}>
                           <Tooltip>
-                            <TooltipTrigger className="w-full h-[125px] bg-[#232329] rounded-xl flex justify-center items-center group">
+                            <TooltipTrigger className="w-full h-[125px] bg-[#232329]  dark:bg-lightSecondary rounded-xl flex justify-center items-center group">
                               <div className="text-6xl group-hover:text-accent transition-all duration-300">
                                 {skill.icon}
                               </div>
@@ -460,11 +457,11 @@ const About = () => {
             </TabsContent>
 
             {/* services*/}
-            <TabsContent value="services" className="">
-              <div className="flex flex-col gap-[30px]">
-                <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                  <h3 className="text-4xl font-bold">{services.title}</h3>
-                  <p className="w-full text-justify text-white/60 mx-auto xl:mx-0">
+            <TabsContent value="services">
+              <div className="flex flex-col gap-[15px]">
+                <div className="flex flex-col gap-[15px] text-center xl:text-left">
+                  <h3 className="text-3xl font-bold">{services.title}</h3>
+                  <p className="w-full text-justify text-dark dark:text-light mx-auto xl:mx-0">
                     {services.description}
                   </p>
                 </div>
@@ -474,7 +471,7 @@ const About = () => {
                       <div key={index} className="w-full md:w-1/2 pr-4 mb-4 ">
                         <TooltipProvider delayDuration={100}>
                           <Tooltip>
-                            <TooltipTrigger className=" py-2 px-4 w-full h-[125px] bg-[#232329] group-hover  hover:bg-accent rounded-lg group hover:text-primary transition-all duration-500">
+                            <TooltipTrigger className=" py-2 px-4 w-full h-[125px] bg-[#232329] dark:bg-lightSecondary group-hover  hover:bg-accent dark:hover:bg-accent rounded-lg group hover:text-primary transition-all duration-500">
                               {/* services name */}
                               <div className="flex flex-row items-center  gap-x-4 mb-4">
                                 <div className="text-4xl font-extrabold   ">
@@ -494,20 +491,8 @@ const About = () => {
                                 })}
                               </div>
                             </TooltipTrigger>
-                            <TooltipContent className="mb-[-15px]">
-                              <div className="relative px-4 py-10">
-                                {" "}
-                                <div className="rounded-md bg-white w-[300px] h-auto text-justify px-2 py-2 capitalize   z-10">
-                                  {skill.description}
-                                </div>
-                                <div
-                                  className="absolute bg-white rounded-md h-10 w-10 right-[150px] bottom-6"
-                                  style={{
-                                    clipPath:
-                                      "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
-                                  }}
-                                ></div>
-                              </div>
+                            <TooltipContent className="mb-2 w-[300px] text-justify">
+                              {skill.description}
                             </TooltipContent>
                           </Tooltip>
                         </TooltipProvider>

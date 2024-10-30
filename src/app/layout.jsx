@@ -30,13 +30,11 @@ export default function RootLayout({ children }) {
   }, []);
 
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body className={`${jetbrainsMono.variable}  no-select`}>
-        <ScrollArea className="h-screen bg-primary">
-          <Header />
-          <StairTransition />
-          <PageTransition> {children}</PageTransition>
-        </ScrollArea>
+        <Header />
+        <StairTransition />
+        <PageTransition> {children}</PageTransition>
       </body>
     </html>
   );

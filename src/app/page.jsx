@@ -27,15 +27,15 @@ const Home = () => {
         },
       }}
     >
-      <div className="container mx-auto  flex items-center h-full">
+      <div className="container mx-auto flex items-center h-full">
         <div className="flex flex-wrap w-full">
-          <div className="w-full md:w-1/2 order-2 md:order-none h-full mb-8 py-6 md:py-10 space-y-2">
+          <div className="w-full md:w-1/2 order-2 md:order-none h-full mb-6 py-6 md:py-8 space-y-2">
             <div className="text-center md:text-start">
-              <span>Data Enthusiast and Web Developer</span>
-              <h1 className="text-[35px] md:text-[60px] leading-[1.2]">
+              <span className="text-lg">Data Enthusiast and Web Developer</span>
+              <h1 className="text-[35px] md:text-[55px] leading-[1.2]">
                 Hello Im
                 <br />
-                <span className="text-[50px] md:text-[75px] text-accent font-semibold">
+                <span className="text-[50px] md:text-[70px] text-accent font-semibold">
                   Ahmad Fiqri
                 </span>
               </h1>
@@ -45,11 +45,11 @@ const Home = () => {
               various programming languages and technologies, delivering
               impactful solutions through code and analysist.
             </p>
-            <div className="py-8 flex md:flex-row flex-col items-center space-x-0  md:space-y-0 space-y-4 md:space-x-8 ">
+            <div className="py-4 flex md:flex-row flex-col items-center space-x-0  md:space-y-0 space-y-4 md:space-x-8 ">
               <Button
                 variant="primary"
                 size="lg"
-                className="uppercase flex items-center gap-2"
+                className="flex items-center gap-2"
                 onClick={handleDownload}
               >
                 <span>Download CV</span>
@@ -60,7 +60,7 @@ const Home = () => {
           </div>
 
           {/* photo area */}
-          <div className="w-full md:w-1/2 py-0 md:py-8 ">
+          <div className="w-full md:w-1/2 py-0  ">
             <div className="flex items-center justify-center h-[200px] md:h-[450px] w-full relative">
               <PhotoProfile />
             </div>

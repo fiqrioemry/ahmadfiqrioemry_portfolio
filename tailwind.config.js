@@ -20,7 +20,11 @@ module.exports = {
     extend: {
       colors: {
         primary: "#1c1c22",
+        dark: "#ffffff/70", // this for text in dark mode
+        light: "#333333", // this for text in light mode
+        lightPrimary: "#ffffff",
         secondary: "#27272c",
+        lightSecondary: "#f0f0f0",
         accent: {
           DEFAULT: "#00ff99",
           hover: "#00e187",
