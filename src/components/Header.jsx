@@ -43,23 +43,26 @@ const Header = () => {
           </Link>
 
           {/* navmenu */}
-          <div className="hidden xl:flex items-center gap-8">
-            <NavMenu />
-            <button
-              onClick={handleToggle}
-              className=" dark:bg-lightPrimary px-2 py-2 rounded-full dark:hover:bg-lightSecondary hover:bg-secondary"
-            >
-              {darkMode ? (
-                <FaSun className="text-2xl" />
-              ) : (
-                <FaMoon className="text-2xl" />
-              )}
-            </button>
-          </div>
-
-          {/* mobile nav */}
-          <div className="xl:hidden">
-            <MobileNav />
+          <div className="flex gap-x-4 items center">
+            <div className="hidden xl:flex items-center gap-8">
+              <NavMenu />
+            </div>
+            <div className="flex items-center">
+              <button
+                onClick={handleToggle}
+                className=" dark:bg-lightPrimary px-2 py-2 rounded-full dark:hover:bg-lightSecondary hover:bg-secondary"
+              >
+                {darkMode ? (
+                  <FaSun className="text-2xl" />
+                ) : (
+                  <FaMoon className="text-2xl" />
+                )}
+              </button>
+            </div>
+            {/* mobile nav */}
+            <div className="xl:hidden flex items-center">
+              <MobileNav />
+            </div>
           </div>
         </div>
       </div>

@@ -9,8 +9,8 @@ import PhotoProfile from "@/components/PhotoProfile";
 const Home = () => {
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/assets/ahmad_fiqri_oemry_cv.pdf"; // Make sure cv.pdf is placed in the 'public' folder
-    link.download = "ahmad_fiqri_cv.pdf"; // Name the file to be downloaded
+    link.href = "/assets/ahmad_fiqri_oemry_cv.pdf";
+    link.download = "ahmad_fiqri_cv.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

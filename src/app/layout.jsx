@@ -2,11 +2,11 @@
 
 import "../app/globals.css";
 import Header from "@/components/Header";
+import { useSelector } from "react-redux";
 import StoreProvider from "./StoreProvider";
 import { JetBrains_Mono } from "next/font/google";
 import PageTransition from "@/components/PageTransition";
 import StairTransition from "@/components/StairTransition";
-import { useSelector } from "react-redux";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
