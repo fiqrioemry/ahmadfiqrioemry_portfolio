@@ -2,10 +2,19 @@
 import Link from "next/link";
 import NavMenu from "./NavMenu";
 import MobileNav from "./MobileNav";
+import { FaMoon, FaSun } from "react-icons/fa";
+import { toggleDarkMode } from "@/app/store/store";
 import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 const Header = () => {
+  const dispatch = useDispatch();
   const [scrolled, setScrolled] = useState(false);
+  const darkMode = useSelector((state) => state.darkMode);
+
+  const handleToggle = () => {
+    dispatch(toggleDarkMode());
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,6 +42,16 @@ const Header = () => {
           {/* navmenu */}
           <div className="hidden xl:flex items-center gap-8">
             <NavMenu />
+            <button
+              onClick={handleToggle}
+              className=" dark:bg-lightPrimary px-2 py-2 rounded-full dark:hover:bg-lightSecondary hover:bg-secondary"
+            >
+              {darkMode ? (
+                <FaSun className="text-2xl" />
+              ) : (
+                <FaMoon className="text-2xl" />
+              )}
+            </button>
           </div>
 
           {/* mobile nav */}

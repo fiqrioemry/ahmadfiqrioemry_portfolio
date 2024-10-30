@@ -1,12 +1,12 @@
 "use client";
 
-import { JetBrains_Mono } from "next/font/google";
 import "../app/globals.css";
 import Header from "@/components/Header";
-import { useEffect } from "react";
+import StoreProvider from "./store/StoreProvider";
+import { JetBrains_Mono } from "next/font/google";
 import PageTransition from "@/components/PageTransition";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import StairTransition from "@/components/StairTransition";
+import { useSelector } from "react-redux";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -14,28 +14,26 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrainsMono",
 });
 
-export default function RootLayout({ children }) {
-  useEffect(() => {
-    const preventContextMenu = (event) => {
-      event.preventDefault();
-    };
-
-    // Menambahkan event listener untuk klik kanan
-    document.addEventListener("contextmenu", preventContextMenu);
-
-    // Menghapus event listener saat komponen unmounted
-    return () => {
-      document.removeEventListener("contextmenu", preventContextMenu);
-    };
-  }, []);
+function RootComponent({ children }) {
+  const darkMode = useSelector((state) => state.darkMode);
 
   return (
-    <html lang="en" className="dark">
-      <body className={`${jetbrainsMono.variable}  no-select`}>
-        <Header />
-        <StairTransition />
-        <PageTransition> {children}</PageTransition>
-      </body>
-    </html>
+    <>
+      <html lang="en" className={`${darkMode ? "dark" : ""}`}>
+        <body className={`${jetbrainsMono.variable}`}>
+          <Header />
+          <StairTransition />
+          <PageTransition>{children}</PageTransition>
+        </body>
+      </html>
+    </>
+  );
+}
+
+export default function RootLayout({ children }) {
+  return (
+    <StoreProvider>
+      <RootComponent>{children}</RootComponent>
+    </StoreProvider>
   );
 }
