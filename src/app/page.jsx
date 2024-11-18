@@ -41,9 +41,11 @@ const Home = () => {
               </h1>
             </div>
             <p className="text-[14px] md:text-[16px] text-center md:text-start">
-              Passionate in data and analytic, proficient in various programming
-              languages and technologies, delivering impactful solutions through
-              code and analyst.
+              passionate in data and analyst skilled in a wide range of
+              programming languages and technologies. Committed to delivering
+              impactful solutions through innovative code, leveraging sharp
+              analytical skills and problem-solving expertise to drive optimal
+              results
             </p>
             <div className="py-4 flex md:flex-row flex-col items-center space-x-0  md:space-y-0 space-y-4 md:space-x-8 ">
               <Button
