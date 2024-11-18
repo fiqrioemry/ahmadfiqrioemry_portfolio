@@ -31,7 +31,7 @@ const Home = () => {
         <div className="flex flex-wrap w-full">
           <div className="w-full md:w-1/2 order-2 md:order-none h-full mb-6 py-6 md:py-8 space-y-2">
             <div className="text-center md:text-start">
-              <span className="text-lg">Data Enthusiast and Web Developer</span>
+              <span className="text-lg">Data Scientist and Data Analyst</span>
               <h1 className="text-[35px] md:text-[55px] leading-[1.2]">
                 Hello Im
                 <br />
@@ -41,9 +41,9 @@ const Home = () => {
               </h1>
             </div>
             <p className="text-[14px] md:text-[16px] text-center md:text-start">
-              Passionate data enthusiast and web developer, proficient in
-              various programming languages and technologies, delivering
-              impactful solutions through code and analysist.
+              Passionate in data and analytic, proficient in various programming
+              languages and technologies, delivering impactful solutions through
+              code and analyst.
             </p>
             <div className="py-4 flex md:flex-row flex-col items-center space-x-0  md:space-y-0 space-y-4 md:space-x-8 ">
               <Button
