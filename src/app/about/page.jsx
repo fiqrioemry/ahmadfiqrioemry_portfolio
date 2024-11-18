@@ -34,7 +34,7 @@ import {
 const about = {
   title: "About me",
   description:
-    "A Mechanical Engineering graduate with 5 years experience in inspection and quality management. I have transitioned into the data science and web development, through comprehensive coursework and hands-on projects. Im good on teamwork, critical thinking and detail oriented, committed to continuous learning and develop in tech field. ",
+    "I have 5 years of experience in inspection and quality management, now transitioning into tech.  recently completed the Digital Talent Incubator program at Purwadhika Digital School, specializing in data science and machine learning. Skilled with programming languages such as Python and R,  strong analytical thinking, problem-solving abilities, and experience working as a team, I am eager to start a career as a data scientist or data analyst. Open to entry-level opportunities where I can apply my technical skills and expand my expertise ",
   info: [
     { fieldName: "Name", fieldValue: "Ahmad Fiqri " },
     { fieldName: "Nationality", fieldValue: "Indonesia" },
@@ -42,7 +42,7 @@ const about = {
 
     {
       fieldName: "Domicile",
-      fieldValue: "Medan",
+      fieldValue: "Jakarta",
     },
     { fieldName: "Email", fieldValue: "foemry@gmail.com" },
     { fieldName: "Freelance", fieldValue: "Available " },
@@ -252,7 +252,7 @@ const About = () => {
       }}
       className="min-h-[80vh]"
     >
-      <div className="container mx-auto ">
+      <div className="container mx-auto mb-10">
         <Tabs className="flex flex-wrap h-full pt-6" defaultValue="about">
           <TabsList className="flex flex-row md:flex-col gap-x-2 gap-y-2 md:w-[40%] mb-8 pr-0 md:pr-12 w-full">
             <div className="w-1/2 md:w-full space-y-2">
@@ -307,7 +307,7 @@ const About = () => {
                       return (
                         <li
                           key={index}
-                          className="bg-primary dark:bg-lightPrimary py-4 px-10 rounded-xl flex flex-col  lg:items-start"
+                          className="bg-primary dark:bg-lightPrimary py-3 px-10 rounded-xl flex flex-col  lg:items-start"
                         >
                           <span className="text-accent text-md">
                             {item.duration}
@@ -315,7 +315,7 @@ const About = () => {
                           <h3 className="text-lg min-h-[40px]">
                             {item.institution}
                           </h3>
-                          <div className="space-y-2">
+                          <div className="space-y-1">
                             <div className="flex items-center gap-x-4">
                               <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
                               <p className="text-sm text-dark dark:text-light">
@@ -460,7 +460,7 @@ const About = () => {
             <TabsContent value="services">
               <div className="flex flex-col gap-[15px]">
                 <div className="flex flex-col gap-[15px] text-center xl:text-left">
-                  <h3 className="text-3xl font-bold">{services.title}</h3>
+                  <h3 className="text-4xl font-bold">{services.title}</h3>
                   <p className="w-full text-justify text-dark dark:text-light mx-auto xl:mx-0">
                     {services.description}
                   </p>
