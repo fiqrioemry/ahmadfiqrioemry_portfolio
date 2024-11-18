@@ -34,7 +34,7 @@ import {
 const about = {
   title: "About me",
   description:
-    "I have 5 years of experience in inspection and quality management, now transitioning into tech.  recently completed the Digital Talent Incubator program at Purwadhika Digital School, specializing in data science and machine learning. Skilled with programming languages such as Python and R,  strong analytical thinking, problem-solving abilities, and experience working as a team, I am eager to start a career as a data scientist or data analyst. Open to entry-level opportunities where I can apply my technical skills and expand my expertise ",
+    "Im swithing career from engineering field to tech, recently completed the Digital Talent Incubator program at Purwadhika Digital School, specializing in data science and machine learning. Skilled with programming languages such as Python and R, I am eager to start a career as a data scientist or data analyst. Open to entry-level opportunities where I can apply my technical skills and expand my expertise ",
   info: [
     { fieldName: "Name", fieldValue: "Ahmad Fiqri " },
     { fieldName: "Nationality", fieldValue: "Indonesia" },
@@ -55,7 +55,7 @@ const experience = {
   icon: "/assets/resume/badge.svg",
   title: "My Experience",
   description:
-    "I have 5 years working experience on engineering field, now im take break and switching my career to the field of information techonology related to data and website develop.",
+    "Eventhough Im new on tech field, but i recently have 5 years working experience on engineering field as inspector, surveyor & quality control, give me knowledge in various industries, strong analytical thinking, problem-solving abilities, and able to manage a good team-work",
   items: [
     {
       company: "Purwadhika Digital School",
@@ -252,7 +252,7 @@ const About = () => {
       }}
       className="min-h-[80vh]"
     >
-      <div className="container mx-auto mb-10">
+      <div className="container mx-auto">
         <Tabs className="flex flex-wrap h-full pt-6" defaultValue="about">
           <TabsList className="flex flex-row md:flex-col gap-x-2 gap-y-2 md:w-[40%] mb-8 pr-0 md:pr-12 w-full">
             <div className="w-1/2 md:w-full space-y-2">
@@ -356,16 +356,19 @@ const About = () => {
                           key={index}
                           className="bg-primary dark:bg-lightPrimary py-4 px-10 rounded-xl flex flex-col  lg:items-start"
                         >
-                          <div className="flex justify-between items-center ">
+                          <div className="flex justify-between items-center w-full">
                             <div className="text-accent text-md">
                               {item.duration}
                             </div>
                             <div className="text-sm">{item.place}</div>
                           </div>
 
-                          <h3 className="text-lg min-h-[40px]">
-                            {item.company}
-                          </h3>
+                          <div className="flex items-center mb-5 space-x-10">
+                            <h3 className="text-lg">{item.company}</h3>
+                            <button className="bg-accent rounded-sm text-slate-800 px-2 py-1 text-xs">
+                              see detail
+                            </button>
+                          </div>
 
                           <div className="space-y-2">
                             <div className="flex items-center gap-x-4">
