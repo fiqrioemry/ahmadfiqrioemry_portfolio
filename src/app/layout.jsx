@@ -11,21 +11,15 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrainsMono",
 });
 
-function RootComponent({ children }) {
-  return (
-    <body className={jetbrainsMono.variable}>
-      <Header />
-      <StairTransition />
-      <PageTransition>{children}</PageTransition>
-    </body>
-  );
-}
-
-export default function RootLayout() {
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <ThemeProvider>
-        <RootComponent />
+        <body className={jetbrainsMono.variable}>
+          <Header />
+          <StairTransition />
+          <PageTransition>{children}</PageTransition>
+        </body>
       </ThemeProvider>
     </html>
   );
