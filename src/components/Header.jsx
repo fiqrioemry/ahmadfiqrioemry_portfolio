@@ -17,7 +17,7 @@ import { Button } from "@/components/ui/button";
 
 const Header = () => {
   const [scrollActive, setScrollActive] = useState(false);
-  const { theme, handleThemeChange } = useTheme();
+  const { handleThemeChange } = useTheme();
 
   useEffect(() => {
     const handleScrollEvent = () => setScrollActive(window.scrollY > 0);
