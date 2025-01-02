@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import { JetBrains_Mono } from "next/font/google";
 import PageTransition from "@/components/PageTransition";
 import StairTransition from "@/components/StairTransition";
+import { ThemeProvider } from "./ThemeProvider";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -10,16 +11,22 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrainsMono",
 });
 
-function RootLayout({ children }) {
+function RootComponent({ children }) {
   return (
-    <html lang="en">
-      <body className={jetbrainsMono.variable}>
-        <Header />
-        <StairTransition />
-        <PageTransition>{children}</PageTransition>
-      </body>
-    </html>
+    <body className={jetbrainsMono.variable}>
+      <Header />
+      <StairTransition />
+      <PageTransition>{children}</PageTransition>
+    </body>
   );
 }
 
-export default RootLayout;
+export default function RootLayout() {
+  return (
+    <html lang="en">
+      <ThemeProvider>
+        <RootComponent />
+      </ThemeProvider>
+    </html>
+  );
+}

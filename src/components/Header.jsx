@@ -2,17 +2,22 @@
 import Link from "next/link";
 import NavMenu from "./NavMenu";
 import MobileNav from "./MobileNav";
-import { FaMoon, FaSun } from "react-icons/fa";
 import React, { useState, useEffect } from "react";
-import useHandleDarkMode from "@/lib/useHandleDarkMode";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Settings } from "lucide-react";
+import { useTheme } from "@/app/ThemeProvider";
+import { Button } from "@/components/ui/button";
 
 const Header = () => {
   const [scrollActive, setScrollActive] = useState(false);
-  const { darkMode, handleDarkMode } = useHandleDarkMode();
-
-  const handleToggle = () => {
-    handleDarkMode();
-  };
+  const { theme, handleThemeChange } = useTheme();
 
   useEffect(() => {
     const handleScrollEvent = () => setScrollActive(window.scrollY > 0);
@@ -44,16 +49,41 @@ const Header = () => {
               <NavMenu />
             </div>
             <div className="flex items-center">
-              <button
-                onClick={handleToggle}
-                className=" dark:bg-lightPrimary px-2 py-2 rounded-full dark:hover:bg-lightSecondary hover:bg-secondary"
-              >
-                {darkMode ? (
-                  <FaSun className="text-2xl" />
-                ) : (
-                  <FaMoon className="text-2xl" />
-                )}
-              </button>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline">
+                    <Settings />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-72">
+                  <DropdownMenuLabel>Select Theme</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem
+                    onClick={() => handleThemeChange("dark")}
+                    className="flex justify-between"
+                  >
+                    Dark theme
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={() => handleThemeChange("light")}
+                    className="flex justify-between"
+                  >
+                    Light theme
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={() => handleThemeChange("classic")}
+                    className="flex justify-between"
+                  >
+                    Classic theme
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={() => handleThemeChange("modern")}
+                    className="flex justify-between"
+                  >
+                    Modern theme
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
             {/* mobile nav */}
             <div className="xl:hidden flex items-center">

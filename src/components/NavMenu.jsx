@@ -24,7 +24,7 @@ const links = [
 const NavMenu = () => {
   const pathname = usePathname();
   return (
-    <nav className="space-x-8 flex  dark:text-light">
+    <nav className="space-x-8 flex">
       {links.map((item, index) => {
         return (
           <Link
