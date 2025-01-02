@@ -14,13 +14,13 @@ const jetbrainsMono = JetBrains_Mono({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <ThemeProvider>
-        <body className={jetbrainsMono.variable}>
+      <body className={jetbrainsMono.variable}>
+        <ThemeProvider>
           <Header />
           <StairTransition />
-          <PageTransition>{children}</PageTransition>
-        </body>
-      </ThemeProvider>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

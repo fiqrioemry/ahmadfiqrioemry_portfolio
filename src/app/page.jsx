@@ -16,17 +16,7 @@ const Home = () => {
     document.body.removeChild(link);
   };
   return (
-    <motion.section
-      initial={{ opacity: 0 }}
-      animate={{
-        opacity: 1,
-        transition: {
-          delay: 1.5,
-          duration: 0.3,
-          ease: "easeIn",
-        },
-      }}
-    >
+    <section>
       <div className="container mx-auto flex items-center h-full">
         <div className="flex flex-wrap w-full">
           <div className="w-full md:w-1/2 order-2 md:order-none h-full mb-6 py-6 md:py-8 space-y-2">
@@ -69,7 +59,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 

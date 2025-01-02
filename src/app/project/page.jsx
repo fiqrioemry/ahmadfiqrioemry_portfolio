@@ -129,18 +129,7 @@ const projects = [
 
 const Project = () => {
   return (
-    <motion.section
-      initial={{ opacity: 0 }}
-      animate={{
-        opacity: 1,
-        transition: {
-          delay: 1.5,
-          duration: 0.3,
-          ease: "easeIn",
-        },
-      }}
-      className="min-h-[80vh]"
-    >
+    <section className="min-h-[80vh]">
       <div className="container mx-auto ">
         <Tabs className="h-full py-8" defaultValue="all_project">
           <div className="text-center">
@@ -457,7 +446,7 @@ const Project = () => {
           </div>
         </Tabs>
       </div>
-    </motion.section>
+    </section>
   );
 };
 
