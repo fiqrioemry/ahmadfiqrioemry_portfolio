@@ -28,7 +28,7 @@ const Socials = () => {
         return (
           <Link
             href={item.path}
-            className="text-xl hover:bg-accent px-2 py-2 border border-accent text-accent hover:text-primary rounded-full transition-all duration-300"
+            className="text-xl hover:bg-accent px-2 py-2 border border-accent text-accent hover:text-primary dark:hover:text-primary-foreground dark:rounded-md rounded-full transition-all duration-300"
             key={index}
           >
             {item.icon}

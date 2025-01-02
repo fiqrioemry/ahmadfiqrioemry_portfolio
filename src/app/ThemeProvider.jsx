@@ -6,10 +6,12 @@ import React, { createContext, useContext } from "react";
 const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  const { theme, handleThemeChange } = useHandleTheme();
+  const { theme, font, handleThemeChange, handleFontChange } = useHandleTheme();
   useHandleTheme();
   return (
-    <ThemeContext.Provider value={{ theme, handleThemeChange }}>
+    <ThemeContext.Provider
+      value={{ theme, font, handleThemeChange, handleFontChange }}
+    >
       {children}
     </ThemeContext.Provider>
   );

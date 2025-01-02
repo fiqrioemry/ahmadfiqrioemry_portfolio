@@ -13,11 +13,11 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Settings } from "lucide-react";
 import { useTheme } from "@/app/ThemeProvider";
-import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const Header = () => {
   const [scrollActive, setScrollActive] = useState(false);
-  const { handleThemeChange } = useTheme();
+  const { font, theme, handleThemeChange, handleFontChange } = useTheme();
 
   useEffect(() => {
     const handleScrollEvent = () => setScrollActive(window.scrollY > 0);
@@ -33,12 +33,12 @@ const Header = () => {
     <header
       className={`${
         scrollActive ? "shadow-md" : ""
-      } py-8 sticky top-0 backdrop-blur-md transition-all duration-300 z-30 `}
+      } py-8 sticky top-0 backdrop-blur-md transition-all duration-300 z-20 `}
     >
-      <div className="container mx-auto">
+      <div className="container mx-auto ">
         <div className="flex items-center justify-between ">
           <Link href="/">
-            <h1 className="text-2xl tracking-[1px] dark:text-light">
+            <h1 className="text-2xl tracking-[1px] ">
               Ahmad<span className="text-accent">Fiqri</span>
             </h1>
           </Link>
@@ -51,36 +51,78 @@ const Header = () => {
             <div className="flex items-center">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="outline">
-                    <Settings />
-                  </Button>
+                  <Settings className="cursor-pointer" />
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-72">
+                <DropdownMenuContent className="w-72  ">
                   <DropdownMenuLabel>Select Theme</DropdownMenuLabel>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem
-                    onClick={() => handleThemeChange("dark")}
-                    className="flex justify-between"
+                    onClick={() => handleThemeChange("classic")}
+                    className={cn(
+                      "flex justify-between",
+                      theme === "classic" ? "bg-foreground " : ""
+                    )}
                   >
                     Dark theme
                   </DropdownMenuItem>
                   <DropdownMenuItem
                     onClick={() => handleThemeChange("light")}
-                    className="flex justify-between"
+                    className={cn(
+                      "flex justify-between",
+                      theme === "light" ? "bg-foreground " : ""
+                    )}
                   >
                     Light theme
                   </DropdownMenuItem>
                   <DropdownMenuItem
-                    onClick={() => handleThemeChange("classic")}
-                    className="flex justify-between"
+                    onClick={() => handleThemeChange("dark")}
+                    className={cn(
+                      "flex justify-between",
+                      theme === "dark" ? "bg-foreground dark:text-white" : ""
+                    )}
                   >
                     Classic theme
                   </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuLabel>Select Font</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
                   <DropdownMenuItem
-                    onClick={() => handleThemeChange("modern")}
-                    className="flex justify-between"
+                    onClick={() => handleFontChange("jetbrains")}
+                    className={cn(
+                      "flex justify-between",
+                      font === "jetbrains"
+                        ? "bg-foreground dark:text-white"
+                        : ""
+                    )}
                   >
-                    Modern theme
+                    JetBrains Mono
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={() => handleFontChange("poppins")}
+                    className={cn(
+                      "flex justify-between",
+                      font === "poppins" ? "bg-foreground dark:text-white" : ""
+                    )}
+                  >
+                    Poppins
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={() => handleFontChange("roboto")}
+                    className={cn(
+                      "flex justify-between",
+                      font === "roboto" ? "bg-foreground dark:text-white" : ""
+                    )}
+                  >
+                    Roboto
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={() => handleFontChange("inter")}
+                    className={cn(
+                      "flex justify-between",
+                      font === "inter" ? "bg-foreground dark:text-white" : ""
+                    )}
+                  >
+                    Inter
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>

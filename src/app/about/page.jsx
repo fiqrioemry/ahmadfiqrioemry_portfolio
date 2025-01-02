@@ -259,7 +259,7 @@ const About = () => {
       animate={{
         opacity: 1,
         transition: {
-          delay: 1.5,
+          delay: 1,
           duration: 0.3,
           ease: "easeIn",
         },

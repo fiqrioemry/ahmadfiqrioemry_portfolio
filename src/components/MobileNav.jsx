@@ -17,10 +17,7 @@ const links = [
     name: "project",
     path: "/project",
   },
-  {
-    name: "blog",
-    path: "/blog",
-  },
+
   {
     name: "contact",
     path: "/contact",
@@ -33,7 +30,7 @@ const MobileNav = () => {
       <SheetTrigger className="flex justify-center items-center ">
         <CiMenuFries className="text-[32px] text-accent" />
       </SheetTrigger>
-      <SheetContent className="flex flex-col bg-primary dark:bg-lightPrimary">
+      <SheetContent className="flex flex-col bg-background">
         {/* logo */}
         <div className="mt-20 mb-20 text-center text-2xl">
           <Link href="/">

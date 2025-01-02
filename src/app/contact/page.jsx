@@ -1,5 +1,5 @@
 "use client";
-
+import { motion } from "framer-motion";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -12,14 +12,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-
-import { FaWhatsappSquare, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { IoLogoWhatsapp } from "react-icons/io";
+import { FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import Link from "next/link";
 import { useState } from "react";
 
 const info = [
   {
-    icon: <FaWhatsappSquare />,
+    icon: <IoLogoWhatsapp />,
     title: "Whatsapp",
     description: "0821-6094-5033",
     link: "https://wa.me/082160945033",
@@ -69,21 +69,32 @@ const Contact = () => {
     window.location.href = mailtoLink;
   };
   return (
-    <section className="py-6">
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{
+        opacity: 1,
+        transition: {
+          delay: 1,
+          duration: 0.3,
+          ease: "easeIn",
+        },
+      }}
+      className="py-6"
+    >
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row gap-[30px]">
           {/* form */}
           <div className="xl:h-[54%] order-2 xl:order-none max-w-[800px]">
             <form
-              className="flex flex-col gap-6 p-10 bg-dark dark:bg-lightSecondary rounded-xl"
+              className="flex flex-col gap-6 p-10 bg-foreground rounded-xl"
               onSubmit={handleSubmit}
             >
               <h3 className="text-4xl text-accent">Lets Work Together</h3>
-              <p className="text-dark dark:text-light text-justify">
+              <p className="text-justify">
                 Whether looking to create a sleek web presence, unlock
                 data-driven insights, or implement machine learning solutions,
-                I’m here to bring your ideas to life. Let’s collaborate and
-                build something impactful.
+                Im here to bring your ideas to life. Lets collaborate and build
+                something impactful.
               </p>
               {/* input */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -150,7 +161,7 @@ const Contact = () => {
                 type="submit"
                 variant="primary"
                 size="lg"
-                className="flex items-center rounded-md gap-2"
+                className="flex bg-background items-center rounded-md gap-2"
               >
                 Send message
               </Button>
@@ -179,7 +190,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

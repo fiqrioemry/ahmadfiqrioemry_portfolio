@@ -15,8 +15,19 @@ const Home = () => {
     link.click();
     document.body.removeChild(link);
   };
+
   return (
-    <section>
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{
+        opacity: 1,
+        transition: {
+          delay: 1,
+          duration: 0.3,
+          ease: "easeIn",
+        },
+      }}
+    >
       <div className="container mx-auto flex items-center h-full">
         <div className="flex flex-wrap w-full">
           <div className="w-full md:w-1/2 order-2 md:order-none h-full mb-6 py-6 md:py-8 space-y-2">
@@ -47,6 +58,7 @@ const Home = () => {
                 <span>Download CV</span>
                 <FiDownload className="text-xl" />
               </Button>
+
               <Socials />
             </div>
           </div>
@@ -59,7 +71,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

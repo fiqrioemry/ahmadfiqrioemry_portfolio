@@ -21,7 +21,7 @@ const buttonVariants = cva(
           "hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-800 dark:hover:text-slate-50",
         link: "text-slate-900 underline-offset-4 hover:underline dark:text-slate-50",
         primary:
-          "rounded-full hover:bg-accent transition-all duration-300 border border-accent hover:text-primary",
+          "rounded-lg classic:rounded-md  hover:bg-accent transition-all duration-300 border border-accent hover:text-primary dark:hover:text-secondary-foreground",
         icon: "rounded-md hover:bg-accent transition-all duration-300 border border-accent hover:text-primary",
       },
       size: {
