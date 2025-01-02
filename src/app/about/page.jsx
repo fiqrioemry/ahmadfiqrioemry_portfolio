@@ -58,16 +58,16 @@ const experience = {
     "Eventhough Im new on tech field, but i recently have 5 years working experience on engineering field as inspector, surveyor & quality control, give me knowledge in various industries, strong analytical thinking, problem-solving abilities, and able to manage a good team-work",
   items: [
     {
-      company: "Purwadhika Digital School",
-      place: "Batam, Indonesia",
-      position: "Apprentice Data Science and Machine Learning Program",
-      duration: "March 2024 - October 2024",
-    },
-    {
       company: "PT. Radiant Utama Interinsco Tbk",
       place: "Palembang, Indonesia",
       position: "Quality Inspector",
       duration: "October 2022 - January 2024",
+      details: [
+        "Overhaul Project PT. Kilang Pertamina International RU 3 as Assistance Inspector :",
+        "1. Perform Inspection and Quality Control Activities during the fabrication process based on procedure and standard.",
+        "2. Review NDT result and coordinate with team on project.",
+        "3. Make the related report to the project completion and drawing for NDT process.",
+      ],
     },
 
     {
@@ -75,12 +75,26 @@ const experience = {
       place: "Medan, Indonesia",
       position: "Site Controller",
       duration: "November 2021 - September 2023",
+      details: [
+        "Work as site controller to ensure the project completion ",
+        "1. Creating a design using Autocad for project requirements.",
+        "2. Developing a bill of quantities for operational project needs.",
+        "3. Perform surveillance and control during the project",
+        "4. Make the related report to the project progress and completion",
+      ],
     },
     {
       company: "PT. Sucofindo Persero",
       place: "Jakarta, Indonesia",
       position: "Technical Inspector",
       duration: "February 2019 - October 2021",
+      details: [
+        "Work as inspector and surveyor on the Industrial Strategic Bussiness Unit :",
+        "1. Perform review and verification for the import document.",
+        "2. Perform Inspection and survey for the imported goods in accordance with documents and regulations.",
+        "3. Conducting inspection, survey and audit for factory in accordance with documents and regulations.",
+        "4. Consulting with client and make the related report based on inspection and survey result.",
+      ],
     },
   ],
 };
@@ -365,14 +379,25 @@ const About = () => {
 
                           <div className="flex items-center mb-5 space-x-10">
                             <h3 className="text-lg">{item.company}</h3>
-                            <button className="bg-accent rounded-sm text-slate-800 px-2 py-1 text-xs">
-                              see detail
-                            </button>
+
+                            <TooltipProvider delayDuration={100}>
+                              <Tooltip>
+                                <TooltipTrigger>
+                                  <span className="bg-accent rounded-sm text-slate-800 px-2 py-1 text-xs">
+                                    see detail
+                                  </span>
+                                </TooltipTrigger>
+                                <TooltipContent className="py-4 px-4 mb-2 w-[500px] text-justify space-y-2">
+                                  {item.details.map((item, index) => {
+                                    return <div key={index}>{item}</div>;
+                                  })}
+                                </TooltipContent>
+                              </Tooltip>
+                            </TooltipProvider>
                           </div>
 
                           <div className="space-y-2">
                             <div className="flex items-center gap-x-4">
-                              {" "}
                               <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
                               <p className="text-sm text-dark dark:text-light">
                                 {item.position}
@@ -412,8 +437,7 @@ const About = () => {
                           </h3>
                           <div className="space-y-2">
                             <div className="flex items-center gap-x-4">
-                              {" "}
-                              <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
+                              <span className="w-[6px] h-[6px] rounded-full bg-accent" />
                               <p className="text-sm text-dark dark:text-light">
                                 {item.degree}
                               </p>

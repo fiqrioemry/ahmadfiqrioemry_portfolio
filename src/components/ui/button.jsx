@@ -22,12 +22,13 @@ const buttonVariants = cva(
         link: "text-slate-900 underline-offset-4 hover:underline dark:text-slate-50",
         primary:
           "rounded-full hover:bg-accent transition-all duration-300 border border-accent hover:text-primary",
+        icon: "rounded-md hover:bg-accent transition-all duration-300 border border-accent hover:text-primary",
       },
       size: {
         default: "h-10 px-4 py-2",
         sm: "text-[16px] uppercase  py-3 px-10  tracking-[1px]",
         lg: " text-[18px] px-8 py-2 uppercase tracking-[2px]",
-        icon: "h-10 w-10",
+        icon: "h-14 w-14",
       },
     },
     defaultVariants: {

@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -14,61 +13,126 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { FaWhatsappSquare, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import Link from "next/link";
+import { useState } from "react";
 
 const info = [
   {
-    icon: <FaPhoneAlt />,
-    title: "Phone",
+    icon: <FaWhatsappSquare />,
+    title: "Whatsapp",
     description: "0821-6094-5033",
+    link: "https://wa.me/082160945033",
   },
   {
     icon: <FaEnvelope />,
     title: "Email",
-    description: "foemry@gmail.com",
+    description: "ahmadfiqrioemry.com",
+    link: "mailto:ahmadfiqrioemry@gmail.com",
   },
   {
     icon: <FaMapMarkerAlt />,
     title: "Address",
     description: "Kelapa Raya No. 11 Medan, Sumatera Utara",
+    link: "https://maps.app.goo.gl/YV3AfrqRmHLmRDxD8",
   },
 ];
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+    phone: "",
+    service: "",
+    message: "",
+  });
+
+  const handleChange = (field, value) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const { firstname, lastname, email, phone, service, message } = formData;
+
+    const mailtoLink = `mailto:ahmadfiqrioemry@gmail.com?subject=${encodeURIComponent(
+      `Hai, saya ${firstname} ${lastname}, tertarik dengan layanan ${service}`
+    )}&body=${encodeURIComponent(
+      `Halo, saya ${firstname} ${lastname}.
+      Email: ${email}
+      Phone: ${phone}
+      Pesan: ${message}`
+    )}`;
+
+    window.location.href = mailtoLink;
+  };
   return (
     <section className="py-6">
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row gap-[30px]">
           {/* form */}
           <div className="xl:h-[54%] order-2 xl:order-none max-w-[800px]">
-            <form className="flex flex-col gap-6 p-10 bg-[#27272c] dark:bg-lightSecondary rounded-xl">
-              <h3 className="text-4xl text-accent">Lets Work Together</h3>
+            <form
+              className="flex flex-col gap-6 p-10 bg-[#27272c] dark:bg-lightSecondary rounded-xl"
+              onSubmit={handleSubmit}
+            >
+              <h3 className="text-4xl text-accent">Let’s Work Together</h3>
               <p className="text-dark dark:text-light text-justify">
                 Whether looking to create a sleek web presence, unlock
                 data-driven insights, or implement machine learning solutions,
-                im here to bring your ideas to life. Lets collaborate and build
-                something impactful.
+                I’m here to bring your ideas to life. Let’s collaborate and
+                build something impactful.
               </p>
               {/* input */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input type="firstname" placeholder="Firstname" />
-                <Input type="lastname" placeholder="Lastname" />
-                <Input type="email" placeholder="Email address" />
-                <Input type="phone" placeholder="Phone Number" />
+                <Input
+                  type="text"
+                  placeholder="Firstname"
+                  value={formData.firstname}
+                  onChange={(e) => handleChange("firstname", e.target.value)}
+                  required
+                />
+                <Input
+                  type="text"
+                  placeholder="Lastname"
+                  value={formData.lastname}
+                  onChange={(e) => handleChange("lastname", e.target.value)}
+                  required
+                />
+                <Input
+                  type="email"
+                  placeholder="Email address"
+                  value={formData.email}
+                  onChange={(e) => handleChange("email", e.target.value)}
+                  required
+                />
+                <Input
+                  type="text"
+                  placeholder="Phone Number"
+                  value={formData.phone}
+                  onChange={(e) => handleChange("phone", e.target.value)}
+                  required
+                />
               </div>
 
               {/* select */}
-              <Select>
+              <Select onValueChange={(value) => handleChange("service", value)}>
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select a service" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectGroup>
                     <SelectLabel>Select a Service</SelectLabel>
-                    <SelectItem value="web">Web Development</SelectItem>
-                    <SelectItem value="data">Data Analysist</SelectItem>
-                    <SelectItem value="machine">Machine Learning</SelectItem>
-                    <SelectItem value="uiux">UI / UX Design</SelectItem>
+                    <SelectItem value="Web Development">
+                      Web Development
+                    </SelectItem>
+                    <SelectItem value="Data Analysis">Data Analysis</SelectItem>
+                    <SelectItem value="Machine Learning">
+                      Machine Learning
+                    </SelectItem>
+                    <SelectItem value="UI/UX Design">UI / UX Design</SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>
@@ -76,10 +140,14 @@ const Contact = () => {
               <Textarea
                 className="h-[200px]"
                 placeholder="Type your message here."
+                value={formData.message}
+                onChange={(e) => handleChange("message", e.target.value)}
+                required
               />
 
               {/* btn */}
               <Button
+                type="submit"
                 variant="primary"
                 size="lg"
                 className="flex items-center rounded-md gap-2"
@@ -95,9 +163,11 @@ const Contact = () => {
               {info.map((item, index) => {
                 return (
                   <li key={index} className="flex items-center gap-6">
-                    <div className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-[#27272c] dark:bg-lightSecondary text-accent rounded-md flex items-center justify-center">
-                      <div className="text-[28px]">{item.icon}</div>
-                    </div>
+                    <Link href={item.link}>
+                      <Button variant="icon" size="icon" className="text-2xl">
+                        {item.icon}
+                      </Button>
+                    </Link>
                     <div className="flex-1">
                       <p className="text-dark dark:text-light">{item.title}</p>
                       <h3 className="text-sm">{item.description}</h3>

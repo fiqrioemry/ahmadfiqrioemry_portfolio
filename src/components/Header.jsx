@@ -4,29 +4,25 @@ import NavMenu from "./NavMenu";
 import MobileNav from "./MobileNav";
 import { FaMoon, FaSun } from "react-icons/fa";
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  handleDarkMode,
-  handleScroll,
-} from "@/lib/features/action/interfaceAction";
+import useHandleDarkMode from "@/lib/useHandleDarkMode";
 
 const Header = () => {
-  const dispatch = useDispatch();
-  const { darkMode, scrollActive } = useSelector((state) => state.interface);
+  const [scrollActive, setScrollActive] = useState(false);
+  const { darkMode, handleDarkMode } = useHandleDarkMode();
 
   const handleToggle = () => {
-    dispatch(handleDarkMode());
+    handleDarkMode();
   };
 
   useEffect(() => {
-    const handleScrollEvent = () => dispatch(handleScroll(window.scrollY > 0));
+    const handleScrollEvent = () => setScrollActive(window.scrollY > 0);
 
     window.addEventListener("scroll", handleScrollEvent);
 
     handleScrollEvent();
 
     return () => window.removeEventListener("scroll", handleScrollEvent);
-  }, [dispatch]);
+  }, []);
 
   return (
     <header
