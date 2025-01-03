@@ -13,28 +13,23 @@ const tabSettings = [
   {
     title: "All Project",
     value: "all_project",
-    data: projects,
   },
 
   {
     title: "Web Development",
     value: "web_development",
-    data: projects,
   },
   {
     title: "Machine Learning",
     value: "machine_learning",
-    data: projects,
   },
   {
     title: "UI_UX",
     value: "ui_ux",
-    data: projects,
   },
   {
     title: "Data Analysis",
     value: "data_analysist",
-    data: projects,
   },
 ];
 const Project = () => {
@@ -72,239 +67,57 @@ const Project = () => {
 
           {/* project */}
           <div>
-            {/* 1. all project */}
-
-            <TabsContent value="all_project">
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {projects.map((item, index) => {
-                  return (
-                    <div
-                      className="w-full bg-secondary dark:border dark:border-accent rounded-md "
-                      key={index}
-                    >
-                      <div className="w-full overflow-hidden px-2 py-2">
-                        <Image
-                          className="rounded-t-md"
-                          src={item.image}
-                          alt={item.name}
-                          width={300}
-                          height={200}
-                        />
-                      </div>
-                      {/* text area */}
-                      <div className="flex flex-col h-[75px] justify-between p-2">
-                        <div>{item.name}</div>
-                        <div className="flex justify-end">
-                          <div className="flex gap-4">
-                            <Tooltips text={"More details"}>
-                              <Ellipsis className="cursor-pointer" />
-                            </Tooltips>
-                            <Tooltips text={"Live demo"}>
-                              <Link href={item.link}>
-                                <FaLink />
-                              </Link>
-                            </Tooltips>
-                            <Tooltips text={"Source code"}>
-                              <Link href={item.github}>
-                                <FaGithub />
-                              </Link>
-                            </Tooltips>
+            {tabSettings.map((tab) => (
+              <TabsContent value={tab.value} key={tab.value}>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                  {projects
+                    .filter((item) =>
+                      tab.value === "all_project"
+                        ? true
+                        : item.type === tab.value
+                    )
+                    .map((item, index) => {
+                      return (
+                        <div
+                          className="w-full bg-secondary dark:border dark:border-accent rounded-md "
+                          key={index}
+                        >
+                          <div className="p-1">
+                            <Image
+                              className="rounded-t-md"
+                              src={item.image}
+                              alt={item.name}
+                              width={300}
+                              height={200}
+                            />
                           </div>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </TabsContent>
-
-            {/* 2. web development */}
-            <TabsContent value="web_development" className="w-full ">
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {projects
-                  .filter((item) => item.type === "web_development")
-                  .map((item, index) => {
-                    return (
-                      <div
-                        className="w-full bg-secondary dark:border dark:border-accent rounded-md "
-                        key={index}
-                      >
-                        <div className="w-full overflow-hidden px-2 py-2">
-                          <Image
-                            className="rounded-t-md"
-                            src={item.image}
-                            alt={item.name}
-                            width={300}
-                            height={200}
-                          />
-                        </div>
-                        {/* text area */}
-                        <div className="flex flex-col h-[75px] justify-between p-2">
-                          <div>{item.name}</div>
-                          <div className="flex justify-end">
-                            <div className="flex gap-4">
-                              <Tooltips text={"More details"}>
-                                <Ellipsis className="cursor-pointer" />
-                              </Tooltips>
-                              <Tooltips text={"Live demo"}>
-                                <Link href={item.link}>
-                                  <FaLink />
-                                </Link>
-                              </Tooltips>
-                              <Tooltips text={"Source code"}>
-                                <Link href={item.github}>
-                                  <FaGithub />
-                                </Link>
-                              </Tooltips>
+                          {/* text area */}
+                          <div className="flex flex-col h-[75px] justify-between p-2">
+                            <div>{item.name}</div>
+                            <div className="flex justify-end">
+                              <div className="flex gap-4">
+                                <Tooltips text={"More details"}>
+                                  <Ellipsis className="cursor-pointer" />
+                                </Tooltips>
+                                <Tooltips text={"Live demo"}>
+                                  <Link href={item.link}>
+                                    <FaLink />
+                                  </Link>
+                                </Tooltips>
+                                <Tooltips text={"Source code"}>
+                                  <Link href={item.github}>
+                                    <FaGithub />
+                                  </Link>
+                                </Tooltips>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    );
-                  })}
-              </div>
-            </TabsContent>
-
-            {/* 3. Data Analysist */}
-            <TabsContent value="data_analysist" className="w-full ">
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {projects
-                  .filter((item) => item.type === "data_analysist")
-                  .map((item, index) => {
-                    return (
-                      <div
-                        className="w-full bg-secondary dark:border dark:border-accent rounded-md "
-                        key={index}
-                      >
-                        <div className="w-full overflow-hidden px-2 py-2">
-                          <Image
-                            className="rounded-t-md"
-                            src={item.image}
-                            alt={item.name}
-                            width={300}
-                            height={200}
-                          />
-                        </div>
-                        {/* text area */}
-                        <div className="flex flex-col h-[75px] justify-between p-2">
-                          <div>{item.name}</div>
-                          <div className="flex justify-end">
-                            <div className="flex gap-4">
-                              <Tooltips text={"More details"}>
-                                <Ellipsis className="cursor-pointer" />
-                              </Tooltips>
-                              <Tooltips text={"Live demo"}>
-                                <Link href={item.link}>
-                                  <FaLink />
-                                </Link>
-                              </Tooltips>
-                              <Tooltips text={"Source code"}>
-                                <Link href={item.github}>
-                                  <FaGithub />
-                                </Link>
-                              </Tooltips>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })}
-              </div>
-            </TabsContent>
-
-            {/* 4. machine learning */}
-            <TabsContent value="machine_learning" className="w-full ">
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {projects
-                  .filter((item) => item.type === "machine_learning")
-                  .map((item, index) => {
-                    return (
-                      <div
-                        className="w-full bg-secondary dark:border dark:border-accent rounded-md "
-                        key={index}
-                      >
-                        <div className="p-1">
-                          <Image
-                            className="rounded-t-md"
-                            src={item.image}
-                            alt={item.name}
-                            width={300}
-                            height={200}
-                          />
-                        </div>
-                        {/* text area */}
-                        <div className="flex flex-col min-h-[75px] justify-between p-2">
-                          <div>{item.name}</div>
-                          <div className="flex justify-end">
-                            <div className="flex gap-4">
-                              <Tooltips text={"More details"}>
-                                <Ellipsis className="cursor-pointer" />
-                              </Tooltips>
-                              <Tooltips text={"Live demo"}>
-                                <Link href={item.link}>
-                                  <FaLink />
-                                </Link>
-                              </Tooltips>
-                              <Tooltips text={"Source code"}>
-                                <Link href={item.github}>
-                                  <FaGithub />
-                                </Link>
-                              </Tooltips>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })}
-              </div>
-            </TabsContent>
-
-            {/* 5. ui and ux design */}
-            <TabsContent value="ui_ux" className="w-full ">
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {projects
-                  .filter((item) => item.type === "ui_ux")
-                  .map((item, index) => {
-                    return (
-                      <div
-                        className="w-full bg-secondary dark:border dark:border-accent rounded-md "
-                        key={index}
-                      >
-                        <div className="w-full overflow-hidden px-2 py-2">
-                          <Image
-                            className="rounded-t-md"
-                            src={item.image}
-                            alt={item.name}
-                            width={300}
-                            height={200}
-                          />
-                        </div>
-                        {/* text area */}
-                        <div className="flex flex-col h-[75px] justify-between p-2">
-                          <div>{item.name}</div>
-                          <div className="flex justify-end">
-                            <div className="flex gap-4">
-                              <Tooltips text={"More details"}>
-                                <Ellipsis className="cursor-pointer" />
-                              </Tooltips>
-                              <Tooltips text={"Live demo"}>
-                                <Link href={item.link}>
-                                  <FaLink />
-                                </Link>
-                              </Tooltips>
-                              <Tooltips text={"Source code"}>
-                                <Link href={item.github}>
-                                  <FaGithub />
-                                </Link>
-                              </Tooltips>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })}
-              </div>
-            </TabsContent>
+                      );
+                    })}
+                </div>
+              </TabsContent>
+            ))}
           </div>
         </Tabs>
       </div>

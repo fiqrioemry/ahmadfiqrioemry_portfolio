@@ -1,12 +1,14 @@
 export const projects = [
   {
-    name: "Exclusive E-commerce",
+    name: "Food blog Website Flavoriz",
     type: "web_development",
-    image: "/assets/web_development_1.png",
-    tech: ["React", "HTML", "Javascript"],
-    description: "",
-    link: "",
-    github: "",
+    image: "/assets/flavoriz.png",
+    tech: ["Vue.js", "HTML", "Javascript"],
+    features: [],
+    description:
+      "A lightweight and user-friendly food recipe web application built using Vue.js. This project fetches recipe data from an API, providing users with an intuitive way to browse, search, and view detailed recipes. Designed with modern aesthetics, the app leverages Tailwind CSS and shadcn for responsive and visually appealing UI components.",
+    link: "https://flavorizefood.netlify.app/",
+    github: "https://github.com/fiqrioemry/Vue-Food-Recipe-Web-App",
   },
   {
     name: "Memory Match Games",
