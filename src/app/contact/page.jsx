@@ -86,7 +86,7 @@ const Contact = () => {
           {/* form */}
           <div className="xl:h-[54%] order-2 xl:order-none max-w-[800px]">
             <form
-              className="flex flex-col gap-6 p-10 bg-foreground rounded-xl"
+              className="flex flex-col gap-6 p-10 bg-secondary dark:border dark:border-primary dark:rounded-nonerounded-xl"
               onSubmit={handleSubmit}
             >
               <h3 className="text-4xl text-accent">Lets Work Together</h3>
@@ -175,7 +175,11 @@ const Contact = () => {
                 return (
                   <li key={index} className="flex items-center gap-6">
                     <Link href={item.link}>
-                      <Button variant="icon" size="icon" className="text-2xl">
+                      <Button
+                        variant="primary"
+                        size="icon"
+                        className="text-2xl"
+                      >
                         {item.icon}
                       </Button>
                     </Link>

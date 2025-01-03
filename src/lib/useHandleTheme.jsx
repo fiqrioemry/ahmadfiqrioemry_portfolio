@@ -1,25 +1,36 @@
+"use client";
+
 import { useEffect, useState } from "react";
 
 const useHandleTheme = () => {
-  const [theme, setTheme] = useState(() => {
-    return localStorage.getItem("theme") || "dark"; /// Default dark
-  });
+  const [theme, setTheme] = useState("dark");
+  const [font, setFont] = useState("jetbrains");
 
-  const [font, setFont] = useState(() => {
-    return localStorage.getItem("font") || "jetbrains"; // Default jetbrains
-  });
+  useEffect(() => {
+    // Hanya berjalan di client-side
+    const savedTheme = localStorage.getItem("theme");
+    const savedFont = localStorage.getItem("font");
+
+    if (savedTheme) setTheme(savedTheme);
+    if (savedFont) setFont(savedFont);
+  }, []);
 
   const handleThemeChange = (newTheme) => {
     setTheme(newTheme);
-    localStorage.setItem("theme", newTheme); // Simpan tema ke localStorage
+    if (typeof window !== "undefined") {
+      localStorage.setItem("theme", newTheme);
+    }
   };
 
   const handleFontChange = (newFont) => {
     setFont(newFont);
-    localStorage.setItem("font", newFont); // Simpan font ke localStorage
+    if (typeof window !== "undefined") {
+      localStorage.setItem("font", newFont);
+    }
   };
 
   useEffect(() => {
+    // Update body class setiap ada perubahan theme atau font
     document.body.classList.remove(
       "dark",
       "light",
@@ -37,6 +48,7 @@ const useHandleTheme = () => {
       document.body.classList.add(font);
     }
   }, [theme, font]);
+
   return { theme, handleThemeChange, font, handleFontChange };
 };
 

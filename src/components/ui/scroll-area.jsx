@@ -9,7 +9,7 @@ const ScrollArea = React.forwardRef(
     <ScrollAreaPrimitive.Root
       ref={ref}
       className={cn(
-        "relative bg-foreground rounded-md  px-2 py-2 overflow-hidden",
+        "relative bg-secondary rounded-md  px-2 py-2 overflow-hidden",
         className
       )}
       {...props}

@@ -9,249 +9,15 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-
 import {
-  FaHtml5,
-  FaCss3,
-  FaReact,
-  FaFigma,
-  FaNodeJs,
-  FaPython,
-} from "react-icons/fa";
+  about,
+  experience,
+  education,
+  course_and_training,
+  skills,
+  services,
+} from "../config/about";
 
-import {
-  SiTailwindcss,
-  SiNextdotjs,
-  SiJupyter,
-  SiTableau,
-  SiMysql,
-  SiPython,
-  SiJavascript,
-  SiR,
-} from "react-icons/si";
-
-// about
-const about = {
-  title: "About me",
-  description:
-    "Im swithing career from engineering field to tech, recently completed the Digital Talent Incubator program at Purwadhika Digital School, specializing in data science and machine learning. Skilled with programming languages such as Python and R, I am eager to start a career as a data scientist or data analyst. Open to entry-level opportunities where I can apply my technical skills and expand my expertise ",
-  info: [
-    { fieldName: "Name", fieldValue: "Ahmad Fiqri " },
-    { fieldName: "Nationality", fieldValue: "Indonesia" },
-    { fieldName: "Phone", fieldValue: "0821-6094-5033 " },
-
-    {
-      fieldName: "Domicile",
-      fieldValue: "Jakarta",
-    },
-    { fieldName: "Email", fieldValue: "foemry@gmail.com" },
-    { fieldName: "Freelance", fieldValue: "Available " },
-    { fieldName: "Languages", fieldValue: "Bahasa, English " },
-  ],
-};
-
-// experience
-const experience = {
-  icon: "/assets/resume/badge.svg",
-  title: "My Experience",
-  description:
-    "Eventhough Im new on tech field, but i recently have 5 years working experience on engineering field as inspector, surveyor & quality control, give me knowledge in various industries, strong analytical thinking, problem-solving abilities, and able to manage a good team-work",
-  items: [
-    {
-      company: "PT. Radiant Utama Interinsco Tbk",
-      place: "Palembang, Indonesia",
-      position: "Quality Inspector",
-      duration: "October 2022 - January 2024",
-      details: [
-        "Overhaul Project PT. Kilang Pertamina International RU 3 as Assistance Inspector :",
-        "1. Perform Inspection and Quality Control Activities during the fabrication process based on procedure and standard.",
-        "2. Review NDT result and coordinate with team on project.",
-        "3. Make the related report to the project completion and drawing for NDT process.",
-      ],
-    },
-
-    {
-      company: "Moehringer Palmwood Indonesia",
-      place: "Medan, Indonesia",
-      position: "Site Controller",
-      duration: "November 2021 - September 2023",
-      details: [
-        "Work as site controller to ensure the project completion ",
-        "1. Creating a design using Autocad for project requirements.",
-        "2. Developing a bill of quantities for operational project needs.",
-        "3. Perform surveillance and control during the project",
-        "4. Make the related report to the project progress and completion",
-      ],
-    },
-    {
-      company: "PT. Sucofindo Persero",
-      place: "Jakarta, Indonesia",
-      position: "Technical Inspector",
-      duration: "February 2019 - October 2021",
-      details: [
-        "Work as inspector and surveyor on the Industrial Strategic Bussiness Unit :",
-        "1. Perform review and verification for the import document.",
-        "2. Perform Inspection and survey for the imported goods in accordance with documents and regulations.",
-        "3. Conducting inspection, survey and audit for factory in accordance with documents and regulations.",
-        "4. Consulting with client and make the related report based on inspection and survey result.",
-      ],
-    },
-  ],
-};
-
-// education
-const education = {
-  icon: "/assets/resume/cap.svg",
-  title: "My Education",
-  description:
-    "Check out below are my education history as data science and mechanical engineering. ",
-  items: [
-    {
-      institution: "Purwadhika Digital School",
-      degree: "Data Science and Machine Learning",
-      duration: "March 2024 - October 2024",
-      final_score: "86.18",
-    },
-
-    {
-      institution: "North Sumatera University",
-      degree: "Bachelor of Mechanical Engineering",
-      duration: "2011 - 2016",
-      gpa_score: "3.09",
-    },
-  ],
-};
-
-// course and training
-const course_and_training = {
-  icon: "/assets/resume/cap.svg",
-  title: "Course and Training",
-  description:
-    "Through my journey in digital Technology, i have joining many course to boost my skills up.",
-  items: [
-    {
-      institution: "Purwadhika Digital School",
-      degree: "Data Science and Machine Learning",
-      duration: "March 2024 - October 2024",
-    },
-    {
-      institution: "MySkills.com",
-      degree: "UI/UX Design",
-      duration: "March 2024 - April 2024",
-    },
-    {
-      institution: "Revou.com",
-      degree: "Data Analysist",
-      duration: "March 2024",
-    },
-    {
-      institution: "Harisenin.com",
-      degree: "Fullstack Web Development",
-      duration: "December 2022 - May 2023",
-    },
-  ],
-};
-
-// skills data
-const skills = {
-  title: "My Skills",
-  description:
-    "I have a capability on many programing language related to web development and data analysist. here are some tools i usually used during my work and project. ",
-  skillList: [
-    {
-      num: 1,
-      icon: <FaHtml5 />,
-      name: "html 5",
-    },
-    {
-      num: 2,
-      icon: <FaCss3 />,
-      name: "CSS",
-    },
-    {
-      num: 3,
-      icon: <SiJavascript />,
-      name: "Javascript",
-    },
-    {
-      num: 4,
-      icon: <FaReact />,
-      name: "React.js",
-    },
-
-    {
-      num: 5,
-      icon: <SiPython />,
-      name: "Python",
-    },
-
-    {
-      num: 6,
-      icon: <SiJupyter />,
-      name: "Jupyter Notebook",
-    },
-    {
-      num: 7,
-      icon: <SiTableau />,
-      name: "Tableau",
-    },
-
-    {
-      num: 8,
-      icon: <SiTailwindcss />,
-      name: "Tailwindcss",
-    },
-  ],
-};
-
-// services
-const services = {
-  title: "My Services",
-  description:
-    "With my expertise and skills i offer various services in tech field related to data and web development. ",
-  skillList: [
-    {
-      num: "01",
-      tools: [
-        { icon: <FaHtml5 /> },
-        { icon: <SiTailwindcss /> },
-        { icon: <SiNextdotjs /> },
-        { icon: <FaNodeJs /> },
-        { icon: <SiMysql /> },
-        { icon: <SiJavascript /> },
-      ],
-      name: "Web Development",
-      description:
-        "Creating dynamic, responsive, and user-centered websites using modern frameworks like React and Next.js. I able to scalable solutions with clean code, ensuring optimal performance, and seamless user experiences across devices",
-    },
-    {
-      num: "02",
-      tools: [
-        { icon: <SiTableau /> },
-        { icon: <SiJupyter /> },
-        { icon: <FaPython /> },
-        { icon: <SiR /> },
-      ],
-      name: "Data Analysist",
-      description:
-        "Data Visualization and business analysist using jupyter notebook and tableau to gain insight and support desicion-making",
-    },
-    {
-      num: "03",
-      tools: [{ icon: <SiJupyter /> }, { icon: <FaPython /> }],
-      name: "Machine Learning",
-      description:
-        "Leveraging machine learning and deep learning to extract insights and drive innovation. From predictive modeling to natural language processing (NLP), I able develop data-driven solutions to solve complex problems, utilizing tools like Python and Scikit-learn",
-    },
-    {
-      num: "04",
-      tools: [{ icon: <FaFigma /> }],
-      name: "UI / UX Design",
-      description:
-        "Creating visually appealing and user-friendly interfaces that enhance user experience. Expertise in wireframing, prototyping, and user testing with tools Figma",
-    },
-  ],
-};
 const About = () => {
   return (
     <motion.section
@@ -267,23 +33,25 @@ const About = () => {
       className="min-h-[80vh]"
     >
       <div className="container mx-auto">
-        <Tabs className="flex flex-wrap h-full pt-6" defaultValue="about">
-          <TabsList className="flex flex-row md:flex-col gap-x-2 gap-y-2 md:w-[40%] mb-8 pr-0 md:pr-12 w-full">
-            <div className="w-1/2 md:w-full space-y-2">
+        <Tabs
+          className="grid grid-cols-4 md:grid-cols-6 gap-2 md:gap-8"
+          defaultValue="about"
+        >
+          <div className="col-span-4 md:col-span-2">
+            <TabsList className=" grid grid-cols-2 md:grid-cols-1 gap-2">
               <TabsTrigger value="about">About</TabsTrigger>
               <TabsTrigger value="education">Education</TabsTrigger>
               <TabsTrigger value="experience">Experience</TabsTrigger>
-            </div>
-            <div className="w-1/2 md:w-full space-y-2">
+
               <TabsTrigger value="course_and_training">
                 Course and Training
               </TabsTrigger>
               <TabsTrigger value="skills">Skills</TabsTrigger>
               <TabsTrigger value="services">Services</TabsTrigger>
-            </div>
-          </TabsList>
+            </TabsList>
+          </div>
 
-          <div className="md:w-[60%] w-full ">
+          <div className="col-span-4">
             {/* about */}
             <TabsContent value="about" className="w-full ">
               <div className="flex flex-col gap-[20px] text-center xl:text-left ">
@@ -315,13 +83,13 @@ const About = () => {
                 <p className="w-full  mx-auto xl:mx-0 text-justify">
                   {education.description}
                 </p>
-                <ScrollArea className="h-auto">
-                  <ul className="grid grid-cols gap-[15px] ">
+                <ScrollArea className="dark:border-primary dark:border-b-2 dark:border-t-2">
+                  <ul className="grid grid-cols gap-3.5 ">
                     {education.items.map((item, index) => {
                       return (
                         <li
                           key={index}
-                          className="bg-background py-3 px-10 rounded-xl flex flex-col  lg:items-start"
+                          className="bg-background py-4 px-10 rounded-xl flex flex-col  lg:items-start dark:border border-primary dark:rounded-none "
                         >
                           <span className="text-accent text-md">
                             {item.duration}
@@ -354,19 +122,19 @@ const About = () => {
 
             {/* experience */}
             <TabsContent value="experience" className="w-full ">
-              <div className="flex flex-col gap-[20px] text-center xl:text-left ">
+              <div className="flex flex-col gap-4 text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{experience.title}</h3>
                 <p className="w-full mx-auto xl:mx-0 text-justify">
                   {experience.description}
                 </p>
 
-                <ScrollArea className="h-[280px]">
-                  <ul className="grid grid-cols gap-[15px] ">
+                <ScrollArea className="h-[280px] dark:border-primary dark:border-b-2 dark:border-t-2">
+                  <ul className="grid grid-cols gap-4 ">
                     {experience.items.map((item, index) => {
                       return (
                         <li
                           key={index}
-                          className="bg-background py-4 px-10 rounded-xl flex flex-col  lg:items-start"
+                          className="bg-background py-4 px-10 rounded-xl dark:border border-primary dark:rounded-none flex flex-col  lg:items-start"
                         >
                           <div className="flex justify-between items-center w-full">
                             <div className="text-accent text-md">
@@ -417,13 +185,13 @@ const About = () => {
                 <p className="w-full mx-auto xl:mx-0 text-justify">
                   {course_and_training.description}
                 </p>
-                <ScrollArea className="h-[280px]">
-                  <ul className="grid grid-cols gap-[15px] ">
+                <ScrollArea className="h-[280px] dark:border-primary dark:border-b-2 dark:border-t-2">
+                  <ul className="grid grid-cols gap-4 ">
                     {course_and_training.items.map((item, index) => {
                       return (
                         <li
                           key={index}
-                          className="bg-background py-4 px-10 rounded-xl flex flex-col  lg:items-start"
+                          className="bg-background py-4 px-10 rounded-xl flex flex-col  lg:items-start dark:border border-primary dark:rounded-none "
                         >
                           <span className="text-accent text-md">
                             {item.duration}
@@ -460,7 +228,7 @@ const About = () => {
                       <li key={index}>
                         <TooltipProvider delayDuration={100}>
                           <Tooltip>
-                            <TooltipTrigger className="w-full h-[125px] bg-foreground rounded-xl flex justify-center items-center group">
+                            <TooltipTrigger className="w-full h-[125px] bg-secondary dark:border dark:border-primary dark:rounded-none rounded-xl flex justify-center items-center group">
                               <div className="text-6xl group-hover:text-accent transition-all duration-300">
                                 {skill.icon}
                               </div>
@@ -479,8 +247,8 @@ const About = () => {
 
             {/* services*/}
             <TabsContent value="services">
-              <div className="flex flex-col gap-[15px]">
-                <div className="flex flex-col gap-[15px] text-center xl:text-left">
+              <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-4 text-center xl:text-left">
                   <h3 className="text-4xl font-bold">{services.title}</h3>
                   <p className="w-full text-justify mx-auto xl:mx-0">
                     {services.description}
@@ -492,7 +260,7 @@ const About = () => {
                       <div key={index} className="w-full md:w-1/2 pr-4 mb-4 ">
                         <TooltipProvider delayDuration={100}>
                           <Tooltip>
-                            <TooltipTrigger className=" py-2 px-4 w-full h-[125px]  bg-foreground  group-hover hover:text-accent rounded-lg group  transition-all duration-300">
+                            <TooltipTrigger className=" py-2 px-4 w-full h-[125px]  dark:border bg-secondary dark:border-primary dark:rounded-none group-hover hover:text-accent rounded-lg group  transition-all duration-300">
                               {/* services name */}
                               <div className="flex flex-row items-center gap-x-4 mb-4">
                                 <div className="text-4xl font-extrabold  ">
