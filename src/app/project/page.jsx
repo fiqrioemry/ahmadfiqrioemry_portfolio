@@ -27,7 +27,7 @@ const tabSettings = [
     data: projects,
   },
   {
-    title: "Ui_ux",
+    title: "UI_UX",
     value: "ui_ux",
     data: projects,
   },
@@ -223,7 +223,7 @@ const Project = () => {
                         className="w-full bg-secondary dark:border dark:border-accent rounded-md "
                         key={index}
                       >
-                        <div className="w-full overflow-hidden px-2 py-2">
+                        <div className="p-1">
                           <Image
                             className="rounded-t-md"
                             src={item.image}
@@ -233,7 +233,7 @@ const Project = () => {
                           />
                         </div>
                         {/* text area */}
-                        <div className="flex flex-col h-[75px] justify-between p-2">
+                        <div className="flex flex-col min-h-[75px] justify-between p-2">
                           <div>{item.name}</div>
                           <div className="flex justify-end">
                             <div className="flex gap-4">
